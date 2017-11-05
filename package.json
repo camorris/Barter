@@ -1,0 +1,20 @@
+{
+  "name": "project_4",
+  "version": "1.0.0",
+  "description": "Last Project for WDI",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/camorris/Project_4.git"
+  },
+  "author": "Chase Morris and Ryan Culton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/camorris/Project_4/issues"
+  },
+  "homepage": "https://github.com/camorris/Project_4#readme"
+}
