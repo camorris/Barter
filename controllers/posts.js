@@ -1,5 +1,7 @@
 const 
   Posts = require('../models/Post.js')
+  jwt = require('jsonwebtoken')
+  dotenv = require('dotenv').load()
 
 module.exports = {
   index: (req,res)=> {
@@ -16,10 +18,19 @@ module.exports = {
   },
 
   create: (req,res)=> {
-    Posts.create(req.body, (err, post) => { 
-      if (err) return res.json({success: false, message: "Missing Required Fields"})
-      res.json({success: true, message: "Post Created", post })
+    jwt.verify(req.headers.token, process.env.JWT_SECRET, function(err, decoded){
+      if (err) return res.json({message: "invalid token"})
+      newPost = new Posts(req.body)
+      newPost.userId = decoded._id
+      newPost.save((err, post)=>{
+        res.json({success: true, message: "Post Created", post })
     })
+    })
+
+    // Posts.create(req.body, (err, post) => { 
+    //   if (err) return res.json({success: false, message: "Missing Required Fields"})
+    //   res.json({success: true, message: "Post Created", post })
+    // })
   },
 
   update: (req, res)=>{
@@ -30,7 +41,7 @@ module.exports = {
       })
     })
   },
-  
+
   destroy: (req, res)=>{
     // res.json({success: true, message: "You are in the delete request"})
     Posts.findByIdAndRemove(req.params.id, (err, post)=>{
