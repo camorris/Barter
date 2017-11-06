@@ -2,16 +2,18 @@ const
   express = require('express'),
   postRouter = express.Router(),
   postsCtrl = require('../controllers/posts.js')
+  verifyToken = require('../serverAuth.js').verifyToken
+
 
 
 postRouter.route('/:location') 
   .get(postsCtrl.index)
-  .post(postsCtrl.create)
+  .post(verifyToken, postsCtrl.create)
 
 postRouter.route('/:location/:id')
   .get(postsCtrl.show)
-  .patch(postsCtrl.update)
-  .delete(postsCtrl.destroy)
+  .patch(verifyToken, postsCtrl.update)
+  .delete(verifyToken, postsCtrl.destroy)
 
 
 
