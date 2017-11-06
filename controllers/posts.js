@@ -6,6 +6,8 @@ module.exports = {
     // Posts.find({ "location": req.params.location}, (err, posts)=>{ 
     //   res.json(posts)
     // })
-    Posts.find({}, (err,posts)=> {res.json(posts)})
+    Posts.find({}, (err,posts)=> {
+      res.json(posts)
+    })
   }
 }
