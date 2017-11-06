@@ -3,14 +3,7 @@ const
 
 module.exports = {
   index: (req,res)=> {
-<<<<<<< HEAD
-    // Posts.find({ "location": req.params.location}, (err, posts)=>{ 
-    //   res.json(posts)
-    // })
-    Posts.find({}, (err,posts)=> {
-=======
-    Posts.find({ "location": req.params.location}, (err, posts)=>{ 
->>>>>>> aacad4badec422990d2831dd8a1b5e637209768c
+    Posts.find({ /*"location": req.params.location */}, (err, posts)=>{ 
       res.json(posts)
     
     })
@@ -21,10 +14,20 @@ module.exports = {
       res.json(post)
     })
   },
+
   create: (req,res)=> {
-    Posts.create(req.body, (err, post)=> { 
+    Posts.create(req.body, (err, post) => { 
       if (err) return res.json({success: false, message: "Missing Required Fields"})
       res.json({success: true, message: "Post Created", post })
     })
+  },
+  update: (req, res)=>{
+    res.json({message:"The patch request was recieved"})
+    Posts.findByIdAndUpdate(req.params.id, (err, post)=>{
+      Object.assign(post, req.body)
+        post.save((err, updatedPost) =>{
+          res.json({success: true, message: "Post updated!"})
+        })
+    } )
   }
 }
