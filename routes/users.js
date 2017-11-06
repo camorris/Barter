@@ -8,7 +8,7 @@ const
     .get(usersCtrl.index)
     .post(usersCtrl.create)
 
-  usersRouter.post('authenticate', userCtrl.authenticate)
+  usersRouter.post('authenticate', usersCtrl.authenticate)
 
   usersRouter.use(verifyToken)
   usersRouter.route('/:id')
