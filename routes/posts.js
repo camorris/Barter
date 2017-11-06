@@ -10,8 +10,8 @@ postRouter.route('/:location')
 
 postRouter.route('/:location/:id')
   .get(postsCtrl.show)
-//   .patch(postsCtrl.update)
-//   .delete(postsCtrl.destroy)
+  .patch(postsCtrl.update)
+  .delete(postsCtrl.destroy)
 
 
 
