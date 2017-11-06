@@ -1,4 +1,5 @@
 const
+  dotenv = require('dotenv').load()
   express = require('express'),
   app = express(),
   logger = require('morgan'),
@@ -20,6 +21,7 @@ app.get('/api',(req,res)=>{
 })
 
 app.use('/api/users', usersRoutes)
- app.listen(PORT, (err)=>{
-   console.log(err || `Server running on port ${PORT}`)
- })
+
+app.listen(PORT, (err)=>{
+  console.log(err || `Server running on port ${PORT}`)
+})

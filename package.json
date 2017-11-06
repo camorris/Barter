@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/camorris/Project_4/issues"
   },
-  "homepage": "https://github.com/camorris/Project_4#readme"
+  "homepage": "https://github.com/camorris/Project_4#readme",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "dotenv": "^4.0.0"
+  }
 }
