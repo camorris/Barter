@@ -22,8 +22,6 @@ The user stories and ERD diagrams can be found on the trello board at this [link
 ### Used Technologies
 ---
 
-
-
 HTML: To Display text on different pages of the site
 
 CSS/Bootstrap: To style the text, navbar, modal,carousel ,links and forms found through out the site 
@@ -54,22 +52,19 @@ Node.js: allows us to runs javascript not in the browser. Implemented Node Modul
 
 MongoDb: A database to store information about the Property Owner, Resident and Property.
 
-Stripe: a payment API so residents can make payments for their rent
 
 
 
 
 ### Unsolved Problems 
 ---
- Currently the team have not implemented complete security functions to Partmint. In 
-	in addition there are still design elements that need to changed to create a better user expereince. 
+  
 
 ### How to Use
 ---
-Go to https://partmint.herokuapp.com to check out the site. Click on `All Properties` to browse through the different properties available for rent. Click on a specific property to Apply for that apartment. From the main page you can also  Log in to view your dashboard as a resident or owner. From the dashboard you can view information regarding rent, properties,group notices and indiviudal notices.
+
 
 ### References
 ---
- 	- https://stripe.com/docs
- 	- https://trello.com/b/YDgBtdo4/partmint
-	- https://fonts.google.com/
+ 
+	
