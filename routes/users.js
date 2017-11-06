@@ -1,7 +1,7 @@
 const
   express = require('express')
   userRouter = new express.Router(),
-  usersCtrl = require('../controller/users.js'),
+  usersCtrl = require('../controllers/users.js'),
   verifyToken = require('../serverAuth.js').verifyToken
 
   usersRouter.route('/')
