@@ -4,7 +4,7 @@ const
   postsCtrl = require('../controllers/posts.js')
 
 
-postRouter.get('/:location') 
+postRouter.route('/:location') 
   .get(postsCtrl.index)
   // .post(postsCtrl.create)
 
