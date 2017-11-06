@@ -1,6 +1,8 @@
 const User = require('../models/User.js')
 const signToken = require('../serverAuth.js').signToken
 
+const jwt = require('jsonwebtoken')
+
 // exports  controls for the user immediately.  
 module.exports = {
 //ist all users
@@ -45,9 +47,13 @@ module.exports = {
 
 	// delete an existing user based of the id 
 	destroy: (req, res) => {
-		User.findByIdAndRemove(req.params.id, (err, user) => {
-			res.json({success: true, message: "User deleted.", user})
-		})
+		//res.json({message: jwt.decode(req.headers.token)})
+		if(req.params.id == jwt.decode(req.headers.token)._id){
+			User.findByIdAndRemove(req.params.id, (err, user) => {
+				res.json({success: true, message: "User deleted.", user})
+			})
+		}
+		res.json({message:'fail!', success: false})
 	},
 
 	// the login route
