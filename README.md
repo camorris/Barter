@@ -12,6 +12,7 @@
 ### Purpose
 ------
   
+To be able to allow people to get items without having to exchange money
 
 ***important information can go here.*** 
 
