@@ -1,11 +1,18 @@
 const 
   express = require('express'),
-  postRouter = express.Router({mergerParams: true}),
+  postRouter = express.Router(),
   postsCtrl = require('../controllers/posts.js')
 
-postRouter.get('/new', postsCtrl.new)
 
-residentRouter.route('/')
+postRouter.get('/:location') 
+  .get(postsCtrl.index)
   .post(postsCtrl.create)
+  
+postRouter.route('/:location/:id')
+  .get(postsCtrl.show)
+  .patch(postsCtrl.update)
+  .delete(postsCtrl.destroy)
 
-module.exports = postRotuer
+
+
+module.exports = postRouter
