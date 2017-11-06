@@ -8,6 +8,7 @@ const
   MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/project_4',
   PORT = process.env.PORT || 3001,
   usersRoutes = require('./routes/users.js')
+  postsRoutes = require('./routes/posts.js')
 
 mongoose.connect(MONGODB_URI, (err)=>{
   console.log(err|| `Connected to MongoDB.`)
@@ -15,6 +16,7 @@ mongoose.connect(MONGODB_URI, (err)=>{
 
 app.use(logger('dev'))
 app.use(bodyParser.json())
+app.use('/posts', postsRoutes)
 
 app.get('/api',(req,res)=>{
   res.json({message: "API root."})
