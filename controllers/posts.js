@@ -5,6 +5,7 @@ module.exports = {
   index: (req,res)=> {
     Posts.find({ "location": req.params.location}, (err, posts)=>{ 
       res.json(posts)
+    
     })
   },
 
@@ -16,7 +17,7 @@ module.exports = {
   create: (req,res)=> {
     Posts.create(req.body, (err, post)=> { 
       if (err) return res.json({success: false, message: "Missing Required Fields"})
-      res.json({success: ture, message: "Post Created", post })
+      res.json({success: true, message: "Post Created", post })
     })
   }
 }
