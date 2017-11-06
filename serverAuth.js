@@ -33,6 +33,6 @@ jwt.verify(token, process.env.JWT_SECRET, (err, decodedData) => {
 }
 
 module.exports = {
-signToken,
-verifyToken
+    signToken,
+    verifyToken
 }

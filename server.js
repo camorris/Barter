@@ -6,7 +6,7 @@ const
   bodyParser = require('body-parser'),
   mongoose = require('mongoose'),
   MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/project_4',
-  PORT = process.env.PORT || 3000,
+  PORT = process.env.PORT || 3001,
   usersRoutes = require('./routes/users.js')
 
 mongoose.connect(MONGODB_URI, (err)=>{
