@@ -16,4 +16,4 @@ const
     .patch(usersCtrl.update)
     .delete(usersCtrl.destroy)
 
-  module.exports
+  module.exports = usersRouter
