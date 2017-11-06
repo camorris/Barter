@@ -6,12 +6,12 @@ const
 
 postRouter.get('/:location') 
   .get(postsCtrl.index)
-  .post(postsCtrl.create)
-  
-postRouter.route('/:location/:id')
-  .get(postsCtrl.show)
-  .patch(postsCtrl.update)
-  .delete(postsCtrl.destroy)
+  // .post(postsCtrl.create)
+
+// postRouter.route('/:location/:id')
+//   .get(postsCtrl.show)
+//   .patch(postsCtrl.update)
+//   .delete(postsCtrl.destroy)
 
 
 

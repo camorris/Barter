@@ -16,13 +16,14 @@ mongoose.connect(MONGODB_URI, (err)=>{
 
 app.use(logger('dev'))
 app.use(bodyParser.json())
-app.use('/posts', postsRoutes)
 
 app.get('/api',(req,res)=>{
   res.json({message: "API root."})
 })
 
 app.use('/api/users', usersRoutes)
+app.use('/api/posts', postsRoutes)
+
 
 app.listen(PORT, (err)=>{
   console.log(err || `Server running on port ${PORT}`)
