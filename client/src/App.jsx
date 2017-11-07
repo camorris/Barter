@@ -6,6 +6,7 @@ import NavBar from './partials/Navbar'
 import LogIn from './views/LogIn'
 import LogOut from './views/LogOut'
 import SignUp from './views/SignUp'
+import NewPost from './views/NewPost'
 import Home from './views/Home'
 
 class App extends React.Component {
@@ -29,7 +30,6 @@ class App extends React.Component {
 	}
 	render() {
 		// console.log(this.state)
-		console.log(this.state.currentUser)
 		const { currentUser } = this.state
  		return (
 			<div className='App'>
@@ -44,7 +44,15 @@ class App extends React.Component {
 					<Route path="/signup" render={(props)=> {
 						return <SignUp {...props} onSignUpSuccess={this.onSignUpSuccess.bind(this)}/>
 					}} />
+<<<<<<< HEAD
 					
+=======
+					<Route path="/post" render={(props)	 => {
+						return currentUser 
+						? <NewPost {...props}/>
+						: <Redirect to="/"/>
+					}} />
+>>>>>>> fe354fc75da195a47ef6b010122c92c56d4c2616
 					<Route path="/" component={Home} />
 				</Switch> 
 			</div>
