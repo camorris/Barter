@@ -1,9 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { Navbar } from 'react-bootstrap'
 
 const NavBar = (props) => {
 	return (
+    
 		<div className='NavBar'>
+      <Navbar inverse collapseOneSelect>
 			<Link to="/">Home</Link>
 			{props.currentUser
 				? (
@@ -18,9 +21,11 @@ const NavBar = (props) => {
 						<Link to="/signup">Sign Up</Link>
 					</span>
 				)
-			}
+      }
+      </Navbar>
 		</div>
 	)
 }
+
 
 export default NavBar

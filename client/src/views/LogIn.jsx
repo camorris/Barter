@@ -1,5 +1,7 @@
 import React from 'react'
 import clientAuth from '../clientAuth'
+import { Button } from 'react-bootstrap';
+
 
 class LogIn extends React.Component {
 	state = {
@@ -28,14 +30,16 @@ class LogIn extends React.Component {
 	
 	render() {
 		console.log(this.state.fields)
-		const { email, password } = this.state.fields
+		const { email, password} = this.state.fields
 		return (
 			<div className='LogIn'>
 				<h1>Log In</h1>
 				<form onChange={this.onInputChange.bind(this)} onSubmit={this.onFormSubmit.bind(this)}>
 					<input type="text" placeholder="Email" name="email" value={email} />
 					<input type="password" placeholder="Password" name="password" value={password} />
-					<button>Log In</button>
+				
+          <Button bsStyle="info">Log In</Button>
+      
 				</form>
 			</div>
 		)
