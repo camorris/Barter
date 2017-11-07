@@ -28,13 +28,9 @@ class NewPost extends React.Component{
 			...this.state.fields
 		}})
 		.then((post)=>{
-			console.log(post.data.post._id)
-			axios({method: 'patch', url:`api/users/${this.state.user._id}`, data:{
-				postIds: [...this.state.user.postIds, post.data.post._id]
-			}
-		})
+			console.log(post.data.post.userId)
 			// this.props.history.push(`/posts/${post.location}/${post._id}`)
-			// this.props.history.push(`/`)
+			this.props.history.push(`/`)
 			
 		})
 
