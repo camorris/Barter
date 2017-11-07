@@ -12,6 +12,13 @@ module.exports = {
     })
   },
 
+  subindex: (req, res)=>{
+    console.log(req)
+    Posts.find({"userId": req.params.id}, (err, posts)=>{
+      res.json(posts)
+    })
+  },
+
   show: (req,res)=> {
     Posts.findById(req.params.id, (err, post)=>{
       res.json(post)

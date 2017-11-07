@@ -4,11 +4,14 @@ const
   postsCtrl = require('../controllers/posts.js')
   verifyToken = require('../serverAuth.js').verifyToken
 
-
+postRouter.route('/user/:id')
+    .get(postsCtrl.subindex)
 
 postRouter.route('/:location') 
   .get(postsCtrl.index)
   .post(verifyToken, postsCtrl.create)
+
+
 
 postRouter.route('/:location/:id')
   .get(postsCtrl.show)
