@@ -1,10 +1,10 @@
 import React from 'react'
 
 
-const VIP = (props) => {
+const NewPost = (props) => {
 	return (
-		<div className='VIP'>
-			<h1>Welcome to the VIP!</h1>
+		<div className='NewPost'>
+			<h1>Welcome to the New Post page!</h1>
 	
 		</div>
 	)
