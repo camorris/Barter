@@ -6,7 +6,7 @@ import NavBar from './partials/Navbar'
 import LogIn from './views/LogIn'
 import LogOut from './views/LogOut'
 import SignUp from './views/SignUp'
-// import VIP from './views/VIP'
+import NewPost from './views/NewPost'
 import Home from './views/Home'
 
 class App extends React.Component {
@@ -30,7 +30,6 @@ class App extends React.Component {
 	}
 	render() {
 		// console.log(this.state)
-		console.log(this.state.currentUser)
 		const { currentUser } = this.state
  		return (
 			<div className='App'>
@@ -45,11 +44,11 @@ class App extends React.Component {
 					<Route path="/signup" render={(props)=> {
 						return <SignUp {...props} onSignUpSuccess={this.onSignUpSuccess.bind(this)}/>
 					}} />
-					{/* <Route path="/vip" render={(props)	 => {
+					<Route path="/post" render={(props)	 => {
 						return currentUser 
-						? <VIP />
-						: <Redirect to="/login"/>
-					}} /> */}
+						? <NewPost {...props}/>
+						: <Redirect to="/"/>
+					}} />
 					<Route path="/" component={Home} />
 				</Switch> 
 			</div>
