@@ -44,15 +44,11 @@ class App extends React.Component {
 					<Route path="/signup" render={(props)=> {
 						return <SignUp {...props} onSignUpSuccess={this.onSignUpSuccess.bind(this)}/>
 					}} />
-<<<<<<< HEAD
-					
-=======
 					<Route path="/post" render={(props)	 => {
 						return currentUser 
 						? <NewPost {...props}/>
 						: <Redirect to="/"/>
 					}} />
->>>>>>> fe354fc75da195a47ef6b010122c92c56d4c2616
 					<Route path="/" component={Home} />
 				</Switch> 
 			</div>
