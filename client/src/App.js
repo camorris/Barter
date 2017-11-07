@@ -1,13 +1,13 @@
 import React from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
-// import clientAuth from './clientAuth'
+import clientAuth from './clientAuth'
 
-import NavBar from './NavBar'
-import LogIn from './views/LogIn'
-import LogOut from './views/LogOut'
-import SignUp from './views/SignUp'
-import VIP from './views/VIP'
-import Home from './views/Home'
+import NavBar from './partials/Navbar'
+// import LogIn from './views/LogIn'
+// import LogOut from './views/LogOut'
+// import SignUp from './views/SignUp'
+// import VIP from './views/VIP'
+// import Home from './views/Home'
 
 class App extends React.Component {
 	state = {currentUser: null}
@@ -34,7 +34,7 @@ class App extends React.Component {
  		return (
 			<div className='App'>
 				<NavBar />
-				<Switch>
+				{/* <Switch>
 					<Route path="/login" render={(props)=> {
 						return <LogIn {...props} onLoginSuccess={this.onLoginSuccess.bind(this)}/>
 					}} />
@@ -50,7 +50,7 @@ class App extends React.Component {
 						: <Redirect to="/login"/>
 					}} />
 					<Route path="/" component={Home} />
-				</Switch>
+				</Switch> */}
 			</div>
 		)
 	}

@@ -58,13 +58,12 @@ function signUp(userInfo) {
 }
 // this will log out user 
 function logOut() {
-  localStorage.removeItem('token')
-//by deleting the token 
+	localStorage.removeItem('token')
 	delete clientAuth.defaults.headers.common.token
 	return true
 }
 
-//export the functions
+
 export default {
 	getCurrentUser,
 	logIn,
