@@ -3,7 +3,7 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 import clientAuth from './clientAuth'
 
 import NavBar from './partials/Navbar'
-// import LogIn from './views/LogIn'
+import LogIn from './views/LogIn'
 // import LogOut from './views/LogOut'
 // import SignUp from './views/SignUp'
 // import VIP from './views/VIP'
