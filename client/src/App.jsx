@@ -6,11 +6,6 @@ import NavBar from './partials/Navbar'
 import LogIn from './views/LogIn'
 import LogOut from './views/LogOut'
 import SignUp from './views/SignUp'
-<<<<<<< HEAD
-
-=======
-// import VIP from './views/VIP'
->>>>>>> 53014886ebbe4064503a802e62a450108fc997d9
 import Home from './views/Home'
 
 class App extends React.Component {
