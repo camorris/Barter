@@ -8,12 +8,13 @@ const NavBar = (props) => {
 			{props.currentUser
 				? (
 					<span>
-						<Link to="/vip">VIP</Link>
+						{/* <Link to="/vip">VIP</Link> */}
 						<Link to="/logout">Log Out</Link>
 					</span>
 				)
 				: (
 					<span>
+            <Link to="/logout">Log Out</Link>
 						<Link to="/login">Log In</Link>
 						<Link to="/signup">Sign Up</Link>
 					</span>
