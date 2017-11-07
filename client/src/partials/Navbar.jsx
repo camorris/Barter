@@ -18,14 +18,16 @@ const NavBar = (props) => {
 			{props.currentUser
 				? (
 					<span>
+						Hello {props.currentUser.name}!
 						{<NavItem eventKey={2} href="/post">New Post</NavItem>}
 						<NavItem eventKey={3} href="/logout">Log Out</NavItem>
+            <NavItem eventKey={4} href={`/profile/${props.currentUser._id}`}>Profile</NavItem>
 					</span>
 				)
 				: (
 					<span>
-						<NavItem eventkey={3} href="/login">Log In</NavItem>
-						<NavItem eventKey={4}href="/signup">Sign Up</NavItem>
+						<NavItem eventkey={5} href="/login">Log In</NavItem>
+						<NavItem eventKey={6}href="/signup">Sign Up</NavItem>
 					</span>
 				)
       }

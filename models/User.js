@@ -5,8 +5,6 @@ const
         name: {type: String, required:true},
         email: {type: String, required: true, unique: true},
         password: {type: String, required: true},
-        postIds: [{}]
-
     })
 //add a method to user to hash the password
 userSchema.methods.generateHash = function(password){

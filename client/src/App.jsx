@@ -8,6 +8,7 @@ import LogOut from './views/LogOut'
 import SignUp from './views/SignUp'
 import NewPost from './views/NewPost'
 import Home from './views/Home'
+import UserProfile from './views/UserProfile'
 
 class App extends React.Component {
 	state = {currentUser: null}
@@ -28,6 +29,7 @@ class App extends React.Component {
 		clientAuth.logOut()
 		this.setState({currentUser: null})
 	}
+
 	render() {
 		// console.log(this.state)
 		const { currentUser } = this.state
@@ -46,7 +48,12 @@ class App extends React.Component {
 					}} />
 					<Route path="/post" render={(props)	 => {
 						return currentUser 
-						? <NewPost {...props}/>
+						? <NewPost {...props} currentUser={currentUser}/>
+						: <Redirect to="/"/>
+					}} />
+					<Route path="/profile/:id" render={(props)	 => {
+						return currentUser 
+						? <UserProfile {...props} currentUser={currentUser}/>
 						: <Redirect to="/"/>
 					}} />
 					<Route path="/" component={Home} />
