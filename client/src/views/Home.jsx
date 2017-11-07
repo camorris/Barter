@@ -1,10 +1,11 @@
 import React from 'react'
+import barterImage from '../BarterNew.jpg'
 
 const Home = (props) => {
 	return (
 		<div className='Home'>
 			<h1>React with JWT</h1>
-      <img src='./BarterNew.png' alt='logo' />
+      <img src={barterImage} alt='logo' />
 		</div>
 	)
 }
