@@ -5,3 +5,7 @@ h1{
 body{
   font-family: 'Montserrat', sans-serif;
 }
+
+img{
+  box-shadow: 0 0 1em gold;
+}
