@@ -10,4 +10,4 @@ const VIP = (props) => {
 	)
 }
 
-export default VIP
+export default NewPost
