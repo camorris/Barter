@@ -14,7 +14,6 @@ const NavBar = (props) => {
 				)
 				: (
 					<span>
-            <Link to="/logout">Log Out</Link>
 						<Link to="/login">Log In</Link>
 						<Link to="/signup">Sign Up</Link>
 					</span>
