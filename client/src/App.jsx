@@ -30,7 +30,6 @@ class App extends React.Component {
 	}
 	render() {
 		// console.log(this.state)
-		console.log(this.state.currentUser)
 		const { currentUser } = this.state
  		return (
 			<div className='App'>
@@ -47,7 +46,7 @@ class App extends React.Component {
 					}} />
 					<Route path="/post" render={(props)	 => {
 						return currentUser 
-						? <NewPost />
+						? <NewPost {...props}/>
 						: <Redirect to="/"/>
 					}} />
 					<Route path="/" component={Home} />
