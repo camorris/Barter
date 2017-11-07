@@ -30,13 +30,16 @@ function logIn(credentials) {
 // pass the credentails to servers authentication function
 	return clientAuth({ method: 'post', url: '/api/users/authenticate', data: credentials }) 
   .then(res => {
+	  console.log('authing')
       const token = res.data.token
 //then if the token is created store it to local storage and return a decoded version
 			if(token) {
+				console.log(token)
 				clientAuth.defaults.headers.common.token = setToken(token)
-        return jwtDecode(token)
+        		return jwtDecode(token)
 // otherwise DO NOT
 			} else {
+				console.log('no token')
 				return false
 			}
 		})

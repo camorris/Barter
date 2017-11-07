@@ -16,7 +16,7 @@ function matchUser(req, res, next){
     .get(usersCtrl.index)
     .post(usersCtrl.create)
 
-  usersRouter.post('authenticate', usersCtrl.authenticate)
+  usersRouter.post('/authenticate', usersCtrl.authenticate)
 
   usersRouter.use(verifyToken)
   usersRouter.route('/:id')
