@@ -4,9 +4,16 @@ import axios from 'axios'
 
 class NewPost extends React.Component{
 	state = {
-		fields: { title: '', body: '', item: '', exchangeFor:'', location:'',image:'', cashValue:''}
+		fields: { title: '', body: '', item: '', exchangeFor:'', location:'',image:'', cashValue:''},
+		user: undefined
 	};
 
+	componentDidMount(){
+		console.log('current user: ',this.props.currentUser)
+		this.setState({
+			user: this.props.currentUser
+		})
+	}
 	onInputChange(evt){
 		this.setState({
 			fields: {
@@ -21,10 +28,16 @@ class NewPost extends React.Component{
 			...this.state.fields
 		}})
 		.then((post)=>{
+			console.log(post.data.post._id)
+			axios({method: 'patch', url:`api/users/${this.state.user._id}`, data:{
+				postIds: [...this.state.user.postIds, post.data.post._id]
+			}
+		})
 			// this.props.history.push(`/posts/${post.location}/${post._id}`)
-			this.props.history.push(`/`)
+			// this.props.history.push(`/`)
 			
 		})
+
 	}
 	render(){
 		const {title, body, item, exchangeFor, location, image, cashValue} = this.state.fields
