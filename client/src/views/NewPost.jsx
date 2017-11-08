@@ -46,9 +46,11 @@ class NewPost extends React.Component{
 				<div className="form-group">
 					<input className="form-control" type="text" placeholder="title" name="title" value={title} />
 					</div>
-
 					<div className="form-group">
 					<input className="form-control" type="text" placeholder="item" name="item" value={item} />
+					</div>
+					<div className="form-group">
+					<input className="form-control" type="text" placeholder="item" name="exchangeFor" value={exchangeFor} />
 					</div>
 					<div className="form-group">
 					  <input className="form-control" type="text" placeholder="location" name="location" value={location} />

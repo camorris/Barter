@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 class ViewPost extends React.Component{
 state={
@@ -31,6 +32,7 @@ state={
             const user = this.state.user
             return(
                 <div>
+                    <Link to={`/posts/${post.location}/${post._id}/edit`}><button>Edit Post</button></Link>
                     <h1>{post.title}</h1>
                     <div>
                         <div>{user.name} wants to exchange: {post.item}</div> <div>{user.name} wants to recieve: {post.exchangeFor}</div>
