@@ -42,7 +42,7 @@ class SignUp extends React.Component {
 					<div className="form-group">
 					<input  className="form-control" type="password" placeholder="Password" name="password" value={password} />
 					</div>
-					<button className="btn btn-submit">Log In</button>
+					<button className="btn btn-submit">Sign Up</button>
 				</form>
 </div>
 		)
