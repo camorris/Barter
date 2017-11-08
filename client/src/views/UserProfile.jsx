@@ -9,6 +9,7 @@ class UserProfile extends React.Component{
         }
     }
     componentDidMount(){
+
             const userID = this.props.match.params.id
             axios({method: 'get', url:`/api/users/${userID}`})
             .then((thisUser)=>{
@@ -22,7 +23,6 @@ class UserProfile extends React.Component{
     fetchPosts(){
             axios({method:'get', url:`/api/posts/user/${this.state.user._id}`})
             .then((posts)=>{
-                console.log("posts",posts.data)
                 this.setState({
                     posts: posts.data
                 })
@@ -34,6 +34,9 @@ class UserProfile extends React.Component{
         if (posts){
             return(
                 <div className='UserProfile'>
+                    <Link to={`/profile/${this.props.currentUser._id}/edit`}>
+                        <button>Edit Profile</button>
+                    </Link>
                     <h1>Posts</h1>
                     <ul>
                         {posts.map((post)=>{
