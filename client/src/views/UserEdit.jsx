@@ -5,6 +5,10 @@ class UserEdit extends React.Component{
     state={
         user: null
     }
+
+    componentDidMount(){
+        console.log(this.props.currentUser)
+    }
     render(){
         return(
             <div>
