@@ -1,24 +1,26 @@
-h1 {
-  color: red; }
-
-.navbar-item {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  float: right !important;
-  color: blue !important;
-  font-size: 20px; }
-
-#greeting {
-  float: right; }
-
 .input {
   max-width: 30%; }
 
-.NavBar {
-  color: white; }
+h1 {
+  font-size: 24px;
+  margin-bottom: 12px; }
 
 img {
   max-height: 5.75rem !important;
   display: inline; }
 
-.navlinks {
-  margin-top: 29px; }
+#middle {
+  text-align: left;
+  position: center;
+  margin: 0 auto;
+  margin-top: 30px; }
+
+.btn.btn-submit {
+  background-color: #e62aff;
+  color: white; }
+
+input:hover {
+  box-shadow: 0 0 1em cyan !important; }
+
+body {
+  font-family: 'Saira Semi Condensed', sans-serif; }

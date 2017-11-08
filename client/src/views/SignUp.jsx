@@ -30,23 +30,21 @@ class SignUp extends React.Component {
 	render() {
 		const { name, email, password } = this.state.fields
 		return (
-			<div className='SignUp'>
+			<div className='SignUp col-sm-6 col-sm-offset-6' id="middle">
 				<h1>Sign Up</h1>
 				<form onChange={this.onInputChange.bind(this)} onSubmit={this.onFormSubmit.bind(this)}>
-				<div className="control has-icons-left has-icons-right">
-					<input  className="input is-primary" type="text" placeholder="Name" name="name" value={name} />
-					<span className="icon is-small is-left">
-      <i className="fa fa-user"></i>
-    </span>
-    <span className="icon is-small is-right">
-      <i className="fa fa-check"></i>
-    </span>
+				<div className="form-group">
+					<input  className="form-control" type="text" placeholder="Name" name="name" value={name} />
 				</div>
-					<input  className="input is-primary" type="text" placeholder="Email" name="email" value={email} />
-					<input  className="input is-primary" type="password" placeholder="Password" name="password" value={password} />
-					<button>Log In</button>
+					<div className="form-group">
+					<input  className="form-control" type="text" placeholder="Email" name="email" value={email} />
+					</div>
+					<div className="form-group">
+					<input  className="form-control" type="password" placeholder="Password" name="password" value={password} />
+					</div>
+					<button className="btn btn-submit">Log In</button>
 				</form>
-			</div>
+</div>
 		)
 	}
 }
