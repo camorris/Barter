@@ -28,9 +28,9 @@ class NewPost extends React.Component{
 			...this.state.fields
 		}})
 		.then((post)=>{
-			console.log(post.data.post.userId)
-			// this.props.history.push(`/posts/${post.location}/${post._id}`)
-			this.props.history.push(`/`)
+			// console.log(post.data.post.userId)
+			this.props.history.push(`/posts/${post.data.post.location}/${post.data.post._id}`)
+			// this.props.history.push(`/`)
 			
 		})
 
@@ -43,12 +43,14 @@ class NewPost extends React.Component{
 
 				<form onChange={this.onInputChange.bind(this)} onSubmit={this.onFormSubmit.bind(this)}>
 					<input type="text" placeholder="title" name="title" value={title} />
-					<input type="text-field" placeholder="body" name="body" value={body} />
 					<input type="text" placeholder="item" name="item" value={item} />
 					<input type="text" placeholder="exchangeFor" name="exchangeFor" value={exchangeFor} />
 					<input type="text" placeholder="location" name="location" value={location} />
 					<input type="text" placeholder="image" name="image" value={image} />
 					<input type="text" placeholder="cashValue" name="cashValue" value={cashValue} />
+					<div>
+						<textarea rows='5' cols='25' placeholder="body" name="body" value={body} />
+					</div>
 					<button>BartR!</button>
 				</form>
 

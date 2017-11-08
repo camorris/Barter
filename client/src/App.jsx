@@ -10,6 +10,8 @@ import NewPost from './views/NewPost'
 import Home from './views/Home'
 import UserProfile from './views/UserProfile'
 import FindLocale from './views/PickLocation'
+import ViewPost from './views/ViewPost'
+//import UserEdit from ./views/UserEdit
 
 class App extends React.Component {
 	state = {currentUser: null}
@@ -60,7 +62,16 @@ class App extends React.Component {
 					<Route path="/posts/find" render={(props)	 => {
 						return <FindLocale {...props}/>				
 					}} />
+					<Route path="/posts/:location/:id" render={(props)	 => {
+						return <ViewPost {...props}/>				
+					}} />
+					{/* <Route path="/profile/edit" render={(props)	 => {
+						return currentUser 
+						? <NewPost {...props} currentUser={currentUser}/>
+						: <Redirect to="/"/>
+					}} /> */}
 					<Route path="/" component={Home} />
+
 				</Switch> 
 			</div>
 		)
