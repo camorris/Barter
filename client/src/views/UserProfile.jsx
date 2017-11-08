@@ -34,6 +34,9 @@ class UserProfile extends React.Component{
         if (posts){
             return(
                 <div className='UserProfile'>
+                    <Link to={`/profile/${this.props.currentUser._id}/edit`}>
+                        <button>Edit Profile</button>
+                    </Link>
                     <h1>Posts</h1>
                     <ul>
                         {posts.map((post)=>{
