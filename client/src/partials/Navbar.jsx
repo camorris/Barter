@@ -3,16 +3,16 @@ import { Link } from 'react-router-dom'
 
 const NavBar = (props) => {
 	return (
+		<nav class="navbar navbar-expand-lg navbar-light bg-dark">
 		<div className='NavBar'>
 			<Link to="/">Home</Link>
 			{props.currentUser
 				? (
 					<span>
 						Hello {props.currentUser.name}!
-						<Link to="/post">New Post</Link>
+						{<Link to="/post">New Post</Link>}
 						<Link to="/logout">Log Out</Link>
-            			<Link to={`/profile/${props.currentUser._id}`}>Profile</Link>
-						<Link to={'/posts/find'}>Find Some Stuff!</Link>
+            <Link to={`/profile/${props.currentUser._id}`}>Profile</Link>
 					</span>
 				)
 				: (
@@ -23,6 +23,7 @@ const NavBar = (props) => {
 				)
 			}
 		</div>
+		</nav>
 	)
 }
 
