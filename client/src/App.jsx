@@ -9,6 +9,7 @@ import SignUp from './views/SignUp'
 import NewPost from './views/NewPost'
 import Home from './views/Home'
 import UserProfile from './views/UserProfile'
+import FindLocale from './views/PickLocation'
 
 class App extends React.Component {
 	state = {currentUser: null}
@@ -55,6 +56,9 @@ class App extends React.Component {
 						return currentUser 
 						? <UserProfile {...props} currentUser={currentUser}/>
 						: <Redirect to="/"/>
+					}} />
+					<Route path="/posts/find" render={(props)	 => {
+						return <FindLocale {...props}/>				
 					}} />
 					<Route path="/" component={Home} />
 				</Switch> 
