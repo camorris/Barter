@@ -12,9 +12,10 @@ const NavBar = (props) => {
 				? (
 					<span>
 						Hello {props.currentUser.name}!
-						{<Link to="/post">New Post</Link>}
+						<Link to="/post">New Post</Link>
 						<Link to="/logout">Log Out</Link>
-            <Link to={`/profile/${props.currentUser._id}`}>Profile</Link>
+            			<Link to={`/profile/${props.currentUser._id}`}>Profile</Link>
+						<Link to={'/posts/find'}>Find Some Stuff!</Link>
 					</span>
 				)
 				: (
