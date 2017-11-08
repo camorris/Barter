@@ -42,7 +42,7 @@ class UserProfile extends React.Component{
                         {posts.map((post)=>{
                             return(
                                 <li key={post._id}>
-                                    <Link to="/">{post.title}</Link> 
+                                    <Link to={`/post/${post.location}/${post._id}`}>{post.title}</Link> 
                                     <button>𝗫</button> 
                                     <button>Edit</button>
                                 </li>

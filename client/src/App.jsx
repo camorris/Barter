@@ -49,11 +49,6 @@ class App extends React.Component {
 					<Route path="/signup" render={(props)=> {
 						return <SignUp {...props} onSignUpSuccess={this.onSignUpSuccess.bind(this)}/>
 					}} />
-					<Route path="/post" render={(props)	 => {
-						return currentUser 
-						? <NewPost {...props} currentUser={currentUser}/>
-						: <Redirect to="/"/>
-					}} />
 					<Route path="/profile/:id/edit" render={(props)	 => {
 						return currentUser 
 						? <UserEdit {...props} currentUser={currentUser}/>
@@ -70,6 +65,11 @@ class App extends React.Component {
 					}} />
 					<Route path="/posts/:location/:id" render={(props)	 => {
 						return <ViewPost {...props}/>				
+					}} />
+					<Route path="/post" render={(props)	 => {
+						return currentUser 
+						? <NewPost {...props} currentUser={currentUser}/>
+						: <Redirect to="/"/>
 					}} />
 
 					<Route path="/" component={Home} />

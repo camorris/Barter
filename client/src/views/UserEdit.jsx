@@ -33,7 +33,7 @@ class UserEdit extends React.Component{
     onFormSubmit(evt){
         evt.preventDefault()
         // if ()
-        if (this.state.fields.password == this.state.fields.confirmPassword){
+        // if (this.state.fields.password === this.state.fields.confirmPassword){
             axios({method:'patch', url:`/api/users/${this.state.user._id}`, 
             data:{
                 ...this.state.fields
@@ -44,7 +44,7 @@ class UserEdit extends React.Component{
                     this.props.history.push(`/profile/${this.props.currentUser._id}`)
                 }  
             })
-        }
+        // }
 
 		// clientAuth.signUp(this.state.fields).then(user => {
 		// 	this.setState({ fields: { name: '', email: '', password: '' } })
