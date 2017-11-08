@@ -3,7 +3,8 @@
 
 h1 {
   font-size: 24px;
-  margin-bottom: 12px; }
+  margin-bottom: 12px;
+  text-align: center; }
 
 img {
   max-height: 5.75rem !important;
@@ -19,8 +20,32 @@ img {
   background-color: #e62aff;
   color: white; }
 
-input:hover {
+textarea:hover, input:hover {
   box-shadow: 0 0 1em cyan !important; }
 
 body {
   font-family: 'Saira Semi Condensed', sans-serif; }
+
+.card {
+  width: 20rem; }
+
+.card-title {
+  font-size: 24px;
+  text-align: left;
+  position: center;
+  margin: 0 auto;
+  margin-top: 30px; }
+
+.card-link {
+  text-align: left;
+  position: center;
+  margin: 0 auto;
+  margin-top: 30px; }
+
+.nav-link, .nav-item {
+  color: white !important;
+  font-size: 20px;
+  text-align: block; }
+
+.navbar-brand {
+  color: white !important; }

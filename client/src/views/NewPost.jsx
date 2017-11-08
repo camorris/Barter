@@ -59,8 +59,8 @@ class NewPost extends React.Component{
 					<div className="form-group">
 					  <input className="form-control" type="text" placeholder="cashValue" name="cashValue" value={cashValue} />
 					</div>
-          			<div className="form-group">
-            			<textarea rows='5' cols='25' placeholder="body" name="body" value={body} />
+          <div className="form-group">
+            			<textarea className="form-control" rows='5' cols='25' placeholder="body" name="body" value={body} />
 					</div>
 					<button className="btn btn-submit">BartR!</button>
 				</form>

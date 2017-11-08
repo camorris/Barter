@@ -9,7 +9,6 @@ class UserProfile extends React.Component{
         }
     }
     componentDidMount(){
-
             const userID = this.props.match.params.id
             axios({method: 'get', url:`/api/users/${userID}`})
             .then((thisUser)=>{
@@ -23,6 +22,7 @@ class UserProfile extends React.Component{
     fetchPosts(){
             axios({method:'get', url:`/api/posts/user/${this.state.user._id}`})
             .then((posts)=>{
+               
                 this.setState({
                     posts: posts.data
                 })
@@ -34,21 +34,29 @@ class UserProfile extends React.Component{
         if (posts){
             return(
                 <div className='UserProfile'>
+                      
+                        <h1>Posts</h1>
+                            <ul>
+                                {posts.map((post)=>{
+                                    return(
+                                        <div className="form-group row">
+                                        <div className="col-md-3 card" id="middle">
+                                              <div className="card-body">
+                                        <li key={post._id}>
+                                            <Link className="card-title"to="/">{post.title}</Link> 
+                                            <button className="card-link">𝗫</button> 
+                                            <button className="card-link">Edit</button>
+                                        </li>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    )
+                                })}
+                            </ul>
+                    
                     <Link to={`/profile/${this.props.currentUser._id}/edit`}>
                         <button>Edit Profile</button>
                     </Link>
-                    <h1>Posts</h1>
-                    <ul>
-                        {posts.map((post)=>{
-                            return(
-                                <li key={post._id}>
-                                    <Link to="/">{post.title}</Link> 
-                                    <button>𝗫</button> 
-                                    <button>Edit</button>
-                                </li>
-                            )
-                        })}
-                    </ul>
                 </div>
             )
         }
@@ -64,3 +72,10 @@ class UserProfile extends React.Component{
 
 
 export default UserProfile
+
+// <div class=" UserProfilecard" style="width: 20rem;">
+//   <img class="card-img-top" src="..." alt="Card image cap">
+//   <div class="card-body">
+//     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+//   </div>
+// </div>
