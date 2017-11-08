@@ -1,12 +1,11 @@
 import React from 'react'
 import clientAuth from '../clientAuth'
 
-
 class LogIn extends React.Component {
 	state = {
 		fields: { email: '', password: ''}
 	}
-
+	//change state on input
 	onInputChange(evt) {
 		this.setState({
 			fields: {
@@ -15,12 +14,15 @@ class LogIn extends React.Component {
 			}
 		})
 	}
-
+	//prevent the reload
 	onFormSubmit(evt) {
 		evt.preventDefault()
+		//and send an axios request via clientAuth with our logIn function
 		clientAuth.logIn(this.state.fields).then(user => {
 			this.setState({ fields: { email: '', password: '' } })
+			//and if it works
 			if(user) {
+				//give them a token and send them home
 				this.props.onLoginSuccess(user)
 				this.props.history.push('/')
 			}

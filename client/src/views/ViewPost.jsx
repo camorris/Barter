@@ -1,33 +1,39 @@
+//import all our required files for functionality
 import React from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 
 class ViewPost extends React.Component{
+    //set a null state at first
 state={
     post: null,
     user: null
 }
-
+    //When the component mounts
     componentDidMount(){
-        console.log(this.props.match.params.id)
+        //store the post ID from the url params
         const postId = this.props.match.params.id
+        //use it to send a get request to our API
+        //the location DOESN'T MATTER, so we put in getpost because I'm lazy!
         axios({method: 'get', url:`/api/posts/getpost/${postId}`})
         .then((post)=>{
-            console.log(post.data.userId)
+            //after we get the post, use it to set the state
             this.setState({
                 post: post.data
             })
+            //we also need to send a request to get the user referenced in the post...
             axios({method: 'get', url:`/api/users/${post.data.userId}`})
             .then((user)=>{
-                console.log('the user: ',user)
+                //and put that in the state as well
                 this.setState({user: user.data})
             })
         })
     }
 
     render(){
+        //if we have a state and a user
         if (this.state.post && this.state.user){
-
+            //store that information in an easy to read way, and display content
             const post = this.state.post
             const user = this.state.user
             return(
@@ -48,9 +54,10 @@ state={
             )
         }
         else{
+            //otherwise let them know we're loading the content
             return(
                 <div>
-                    <h1>The Single Post View!</h1>
+                    <h1>Loading Post, please wait!</h1>
                 </div>
             )
         }

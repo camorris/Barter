@@ -3,10 +3,13 @@ import clientAuth from '../clientAuth'
 import 'bulma/css/bulma.css'
 
 class SignUp extends React.Component {
+
+	//set the state to empty by default
 	state = {
 		fields: { name: '', email: '', password: ''}
 	}
 
+	//Whenever the input changes, update the state
 	onInputChange(evt) {
 		this.setState({
 			fields: {
@@ -16,11 +19,13 @@ class SignUp extends React.Component {
 		})
 	}
 
+	//don't refresth the page on submit, and use it to send our signup request
 	onFormSubmit(evt) {
 		evt.preventDefault()
 		clientAuth.signUp(this.state.fields).then(user => {
 			this.setState({ fields: { name: '', email: '', password: '' } })
 			if(user) {
+				//then redirect the user after generating a token
 				this.props.onSignUpSuccess(user)
 				this.props.history.push('/')
 			}

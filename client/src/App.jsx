@@ -1,7 +1,9 @@
+//import all our required files for functionality
 import React from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
 import clientAuth from './clientAuth'
 
+//import all our views
 import NavBar from './partials/Navbar'
 import LogIn from './views/LogIn'
 import LogOut from './views/LogOut'
@@ -16,7 +18,8 @@ import EditPost from './views/EditPost'
 
 class App extends React.Component {
 	state = {currentUser: null}
-	
+
+	//when it mounts, set the current user
 	componentDidMount() {
 		this.setState({currentUser: clientAuth.getCurrentUser() })
 	}
@@ -34,8 +37,9 @@ class App extends React.Component {
 		this.setState({currentUser: null})
 	}
 
+	
 	render() {
-		// console.log(this.state)
+		//store the current user in an accessable, easy to reference variable!
 		const { currentUser } = this.state
  		return (
 			<div className='App'>
