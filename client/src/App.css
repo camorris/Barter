@@ -1,0 +1,26 @@
+.input {
+  max-width: 30%; }
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 12px; }
+
+img {
+  max-height: 5.75rem !important;
+  display: inline; }
+
+#middle {
+  text-align: left;
+  position: center;
+  margin: 0 auto;
+  margin-top: 30px; }
+
+.btn.btn-submit {
+  background-color: #e62aff;
+  color: white; }
+
+input:hover {
+  box-shadow: 0 0 1em cyan !important; }
+
+body {
+  font-family: 'Saira Semi Condensed', sans-serif; }

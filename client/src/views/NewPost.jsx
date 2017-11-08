@@ -38,20 +38,33 @@ class NewPost extends React.Component{
 	render(){
 		const {title, body, item, exchangeFor, location, image, cashValue} = this.state.fields
 		return (
-			<div className='NewPost'>
+			<div  className='NewPost col-sm-6 col-sm-offset-6' id="middle">
+		
 				<h1>Welcome to the New Post page!</h1>
 
 				<form onChange={this.onInputChange.bind(this)} onSubmit={this.onFormSubmit.bind(this)}>
-					<input type="text" placeholder="title" name="title" value={title} />
-					<input type="text" placeholder="item" name="item" value={item} />
-					<input type="text" placeholder="exchangeFor" name="exchangeFor" value={exchangeFor} />
-					<input type="text" placeholder="location" name="location" value={location} />
-					<input type="text" placeholder="image" name="image" value={image} />
-					<input type="text" placeholder="cashValue" name="cashValue" value={cashValue} />
-					<div>
-						<textarea rows='5' cols='25' placeholder="body" name="body" value={body} />
+				<div className="form-group">
+					<input className="form-control" type="text" placeholder="title" name="title" value={title} />
 					</div>
-					<button>BartR!</button>
+					<div className="form-group">
+					<input className="form-control" type="text" placeholder="item" name="item" value={item} />
+					</div>
+					<div className="form-group">
+					<input className="form-control" type="text" placeholder="exchangeFor" name="exchangeFor" value={exchangeFor} />
+					</div>
+					<div className="form-group">
+					<input className="form-control" type="text" placeholder="location" name="location" value={location} />
+					</div>
+					<div className="form-group">
+					<input className="form-control" type="text" placeholder="image" name="image" value={image} />
+					</div>
+					<div className="form-group">
+					<input className="form-control" type="text" placeholder="cashValue" name="cashValue" value={cashValue} />
+					</div>
+					<div className="form-group">
+					<textarea placeholder="body" name="body" value={body} />
+					</div>
+					<button className="btn btn-submit">BartR!</button>
 				</form>
 
 			</div>

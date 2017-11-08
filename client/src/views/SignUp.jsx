@@ -1,5 +1,6 @@
 import React from 'react'
 import clientAuth from '../clientAuth'
+import 'bulma/css/bulma.css'
 
 class SignUp extends React.Component {
 	state = {
@@ -29,15 +30,21 @@ class SignUp extends React.Component {
 	render() {
 		const { name, email, password } = this.state.fields
 		return (
-			<div className='SignUp'>
+			<div className='SignUp col-sm-6 col-sm-offset-6' id="middle">
 				<h1>Sign Up</h1>
 				<form onChange={this.onInputChange.bind(this)} onSubmit={this.onFormSubmit.bind(this)}>
-					<input type="text" placeholder="Name" name="name" value={name} />
-					<input type="text" placeholder="Email" name="email" value={email} />
-					<input type="password" placeholder="Password" name="password" value={password} />
-					<button>Log In</button>
+				<div className="form-group">
+					<input  className="form-control" type="text" placeholder="Name" name="name" value={name} />
+				</div>
+					<div className="form-group">
+					<input  className="form-control" type="text" placeholder="Email" name="email" value={email} />
+					</div>
+					<div className="form-group">
+					<input  className="form-control" type="password" placeholder="Password" name="password" value={password} />
+					</div>
+					<button className="btn btn-submit">Log In</button>
 				</form>
-			</div>
+</div>
 		)
 	}
 }
