@@ -1,10 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import 'bulma/css/bulma.css'
 
 const NavBar = (props) => {
 	return (
 		<div className='NavBar'>
+			<nav className="navbar" >
 			<Link to="/">Home</Link>
+				<button className="button navbar-burger">
 			{props.currentUser
 				? (
 					<span>
@@ -21,6 +24,8 @@ const NavBar = (props) => {
 					</span>
 				)
 			}
+			</button>
+			</nav>
 		</div>
 	)
 }
