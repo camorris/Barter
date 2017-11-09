@@ -11,6 +11,7 @@ class UserEdit extends React.Component{
 
     //when the component mounts
     componentDidMount(){
+        console.log(this.props)
         //send an axios request to get the user
         axios({method:'get', url:`/api/users/${this.props.currentUser._id}`})
         .then((user)=>{
@@ -19,6 +20,14 @@ class UserEdit extends React.Component{
                 user: user.data,
                 fields: {name: user.data.name, email: user.data.email}
             })
+        })
+    }
+
+    onDeleteClick(){
+        axios({method: 'delete', url:`/api/users/${this.state.user._id}`})
+        .then((res)=>{
+            this.props.onLogOut()
+            this.props.history.push('/login')
         })
     }
 
@@ -89,6 +98,7 @@ class UserEdit extends React.Component{
                         </div>
                         <button className="btn btn-submit">Edit Profile</button>
                     </form>
+                    <button onClick={this.onDeleteClick.bind(this)}>DELETE</button>
                 </div>
             )
         }
