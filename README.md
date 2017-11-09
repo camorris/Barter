@@ -36,30 +36,13 @@ Ajax: Used ajax to create chate between residents adn property owner
 
 Node.js: allows us to runs javascript not in the browser. Implemented Node Module Packages: 
 
-	 Express
-	 Mongoose
-	 Body-Parser
-	 Morgan
-	 EJS
-	 Express-EJS-Layouts
-	 Connect-Flash
-	 Cookie-Parser
-	 Express-Session
-	 Underscore
-	 Passport
-	 Dotenv
-	 Connect-MongoDB-Session
-	 Sweetalert
-
 MongoDb: A database to store information about the Property Owner, Resident and Property.
-
-
 
 
 
 ### Unsolved Problems 
 ---
-  
+  With the alotted time we were unable to add several features to the app. For example s
 
 ### How to Use
 ---

@@ -11,7 +11,7 @@ const Home = (props) => {
 		<div class="row text-center">
       <div class="col-md-4">
         <span class="fa-stack fa-4x">
-          <i class="fa fa-circle fa-stack-2x text-partmint"></i>
+          <i class="fa fa-circle fa-stack-2x"></i>
           <i class="fa fa-home fa-stack-1x fa-inverse" ></i>
         </span>
         <h4 class="service-heading">Property Owners</h4>
@@ -19,7 +19,7 @@ const Home = (props) => {
       </div>
       <div class="col-md-4">
         <span class="fa-stack fa-4x">
-          <i class="fa fa-circle fa-stack-2x text-partmint"></i>
+          <i class="fa fa-circle fa-stack-2x"></i>
           <i class="fa fa-handshake-o fa-stack-1x fa-inverse"></i>
         </span>
         <h4 class="service-heading">Residents</h4>
@@ -27,7 +27,7 @@ const Home = (props) => {
       </div>
       <div class="col-md-4">
         <span class="fa-stack fa-4x">
-          <i class="fa fa-circle fa-stack-2x text-partmint"></i>
+          <i class="fa fa-circle fa-stack-2x"></i>
           <i class="fa fa-plus-square-o fa-stack-1x fa-inverse"></i>
         </span>
         <h4 class="service-heading">Guests</h4>
@@ -41,7 +41,7 @@ const Home = (props) => {
   <hr class="my-4"/>
   <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
   <p class="lead">
-    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+    <a class="btn btn-submit btn-lg" href="#" role="button">Learn more</a>
   </p>
 </div>
 		</div>

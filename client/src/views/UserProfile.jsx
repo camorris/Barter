@@ -10,10 +10,6 @@ class UserProfile extends React.Component{
     }
     //when the component mounts
     componentDidMount(){
-<<<<<<< HEAD
-=======
-        //store the user ID from the url params
->>>>>>> 16a9d1932dc70ab424053a1ed3cf112300515f77
             const userID = this.props.match.params.id
             //use it to get the user object
             axios({method: 'get', url:`/api/users/${userID}`})
@@ -45,7 +41,7 @@ class UserProfile extends React.Component{
             return(
                 <div className='UserProfile'>
                       
-                        <h1>Posts</h1>
+                        <h1>What you are Trading</h1>
                             <ul className="cardstack" id="tradeItem">
                                 {posts.map((post)=>{
                                     return(
@@ -61,10 +57,10 @@ class UserProfile extends React.Component{
                                                                 <p> <Link className="card-title" to={`/posts/${post.location}/${post._id}`}>{post.title}</Link> </p>
                                                                 
                                                                 <Link to={`/posts/${post.location}/${post._id}/edit`}>
-                                                                    <a role="button" class="btn btn-default btn-xs pull-right"
-                                                                    href="#"><i class="glyphicon glyphicon-edit"></i>
-                                                                    </a><a role="button" class="btn btn-submit btn-xs" href="#">edit</a> </Link>
-                                                                <a role="button" class="btn btn-default btn-xs" href="#">X</a>
+                                                                    <a role="button" className="btn btn-default btn-xs pull-right"
+                                                                    href="#"><i className="glyphicon glyphicon-edit"></i>
+                                                                    </a><a role="button" className="btn btn-submit btn-xs" id="editTrade" href="#">edit</a> </Link>
+                                                               
                                                              </li>
                                                           </div>
                                                         </div>
