@@ -43,7 +43,14 @@ class EditPost extends React.Component{
 			
 		})
 
-	}
+    }
+    
+    onDeleteClick(){
+        axios({method: 'delete', url:`/api/posts/${this.state.post.location}/${this.state.post._id}`})
+        .then((res)=>{
+            this.props.history.push(`/`)
+        })
+    }
 
     render(){
         //if there is no post yet, tell them we're loading content
@@ -85,6 +92,7 @@ class EditPost extends React.Component{
                     </div>
                     <button className="btn btn-submit">BartR!</button>
                 </form>
+                <button onClick={this.onDeleteClick.bind(this)}>DELETE</button>
 
                 </div>
             )

@@ -49,7 +49,6 @@ class UserProfile extends React.Component{
                             return(
                                 <li key={post._id}>
                                     <Link to={`/posts/${post.location}/${post._id}`}>{post.title}</Link> 
-                                    <button>𝗫</button> 
                                     <Link to={`/posts/${post.location}/${post._id}/edit`}><button>Edit</button></Link>
 
                                 </li>

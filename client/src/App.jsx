@@ -63,7 +63,7 @@ class App extends React.Component {
 					{/* Profile Edit Page */}
 					<Route exact path="/profile/:id/edit" render={(props)	 => {
 						return currentUser 
-						? <UserEdit {...props} currentUser={currentUser}/>
+						? <UserEdit {...props} currentUser={currentUser} onLogOut={this.logOut.bind(this)}/>
 						: <Redirect to="/"/>
 					}} />
 
@@ -81,7 +81,7 @@ class App extends React.Component {
 
 					{/* Post Edit */}
 					<Route exact path="/posts/:location/:id/edit" render={(props)	 => {
-						return <EditPost {...props}/>				
+						return <EditPost {...props} />				
 					}} />
 
 					{/* Post View */}
