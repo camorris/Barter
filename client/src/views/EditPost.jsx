@@ -79,10 +79,32 @@ class EditPost extends React.Component{
                         <input className="form-control" type="text" placeholder="Exchange For" name="exchangeFor" defaultValue={exchangeFor} />
                     </div>
                     <div className="form-group">
-                        <input className="form-control" type="text" placeholder="location" name="location" defaultValue={location} />
+
+					<label htmlFor="location">Location:  </label>
+						<select name="location">
+                            <option value="LosAngeles">Los Angeles</option>
+                            <option value="SantaMonica">Santa Monica</option>
+                            <option value="Mordor">Mordor</option>
+                            <option value="NeverNeverLand">Never Never Land</option>
+                            <option value="Hogwarts">Hogwarts</option>
+                            <option value="testLoc">testLoc</option>
+                        </select>
                     </div>
                     <div className="form-group">
-                        <input className="form-control" type="text" placeholder="Image" name="image" defaultValue={image} />
+                    <label htmlFor="image">Category:  </label>
+					  <select name="image">
+                            <option value="Art">Art</option>
+                            <option value="Auto">Auto / Auto Parts</option>
+                            <option value="Bike">Bikes</option>
+                            <option value="Books">Books</option>
+							<option value="Electronics">Electronics</option>
+							<option value="Furniture">Furniture</option>
+							<option value="Games">Games</option>
+							<option value="Guitar">Music / Instruments</option>
+							<option value="Photography">Photography</option>
+                            <option value="Toys">Kids Toys</option>
+                        </select>
+					  
                     </div>
                     <div className="form-group">
                         <input className="form-control" type="text" placeholder="optional cash value" name="cashValue" defaultValue={cashValue} />
