@@ -10,10 +10,7 @@ class UserProfile extends React.Component{
     }
     //when the component mounts
     componentDidMount(){
-<<<<<<< HEAD
-=======
         //store the user ID from the url params
->>>>>>> 16a9d1932dc70ab424053a1ed3cf112300515f77
             const userID = this.props.match.params.id
             //use it to get the user object
             axios({method: 'get', url:`/api/users/${userID}`})
