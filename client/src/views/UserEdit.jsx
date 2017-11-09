@@ -4,9 +4,7 @@ import axios from 'axios'
 class UserEdit extends React.Component{
     state={
         user: null,
-        fields: { name: '', email: '', password: '', confirmPassword: '', currentPassword: ''}
-        // , password: '', confirmPassword: '', currentPassword: ''
-        //^^^^ This is just data storage for easy testing. Playing with password auths
+        fields: { name: '', email: '', password: '', confirmNewPassword: '', passwordConfirm: ''}
     }
 
     //when the component mounts
@@ -44,20 +42,29 @@ class UserEdit extends React.Component{
 
     onFormSubmit(evt){
         evt.preventDefault()
-        // if ()
-        // if (this.state.fields.password === this.state.fields.confirmPassword){
-     //we need to make sure the new password is definitely right. Working on this later  
+                    //we need to make sure the new password is definitely right before moving on
+        if (this.state.fields.password == this.state.fields.confirmNewPassword){
+            //this request will use the validPassword method on the user in the backend to make sure
+            //the confirmation password is correct before altering the user
             axios({method:'patch', url:`/api/users/${this.state.user._id}`, 
             data:{
                 ...this.state.fields
             }})
+            
             .then((user)=>{
-                this.setState({ fields: { name: '', email: ''}})
-                if (user.data){
+                this.setState({ fields: { name: '', email: '',password: '', confirmNewPassword: '', passwordConfirm: ''}})
+                console.log(user.data.success)
+                
+                if (user.data.success){
+                    
                     this.props.history.push(`/profile/${this.props.currentUser._id}`)
                 }  
+                else{
+                    //we should get sweet alerts or something like it for react
+                    alert("Invalid password or password confirmation")
+                }
             })
-        // }
+        }
 
 
     }
@@ -73,7 +80,7 @@ class UserEdit extends React.Component{
         }
         //otherwise, we can use the state to display content!
         else{
-            const {name, email, password, confirmPassword, currentPassword} = this.state.fields
+            const {name, email, password, confirmNewPassword, passwordConfirm} = this.state.fields
             //, password, confirmPassword, currentPassword
             //^^^^ This is just data storage for easy testing. Playing with password auths
             console.log(name)
@@ -88,13 +95,13 @@ class UserEdit extends React.Component{
                             <input  className="form-control" type="text" name="email" defaultValue={email} />
                         </div>
                         <div className="form-group">
-                            <input  className="form-control" type="password" name="password" defaultValue={password} />
+                            <input  className="form-control" type="password" name="password" placeholder="New Password" defaultValue={password} />
                         </div>
                         <div className="form-group">
-                            <input  className="form-control" type="password" name="confirmPassword" defaultValue={confirmPassword} />
+                            <input  className="form-control" type="password" name="confirmNewPassword" placeholder="Confirm New Password" defaultValue={confirmNewPassword} />
                         </div>
                         <div className="form-group">
-                            <input  className="form-control" type="password" name="currentPassword" defaultValue={currentPassword} />
+                            <input  className="form-control" type="password" name="passwordConfirm" placeholder="Current Password" defaultValue={passwordConfirm} />
                         </div>
                         <button className="btn btn-submit">Edit Profile</button>
                     </form>

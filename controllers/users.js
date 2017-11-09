@@ -37,7 +37,7 @@ module.exports = {
 	// find a existing user and update an existing user information
 	update: (req, res) => {
 		User.findById(req.params.id, (err, user) => {
-			if(!user.validPassword(req.body.passwordConfirm)) return 
+			if(!user.validPassword(req.body.passwordConfirm)) return res.json({success: false, message: "Invalid Credentials"})
   // Object.assign takes the data user and make sure specific fields are changed
       Object.assign(user, req.body)
 			user.save((err, updatedUser) => {
