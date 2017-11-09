@@ -33,7 +33,18 @@ class NewPost extends React.Component{
 		}})
 		//then redirect them to their new post!
 		.then((post)=>{
-			this.props.history.push(`/posts/${post.data.post.location}/${post.data.post._id}`)
+			if (post.success){
+				setTimeout(()=>{
+					console.log(post)
+					this.props.history.push(`/posts/${post.data.post.location}/${post.data.post._id}`)
+				}, 500)
+	
+			}
+			else{
+				alert('Whoops! Something went wrong!')
+				console.log(post)
+			}
+
 		})
 
 	}
@@ -85,7 +96,7 @@ class NewPost extends React.Component{
 					  
 					</div>
 					<div className="form-group">
-					  <input className="form-control" type="text" placeholder="cashValue" name="cashValue" value={cashValue} />
+					  <input className="form-control" type="number" placeholder="cashValue" name="cashValue" value={cashValue} />
 					</div>
           <div className="form-group">
             			<textarea className="form-control" rows='5' cols='25' placeholder="body" name="body" value={body} />

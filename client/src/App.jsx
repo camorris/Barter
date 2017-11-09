@@ -96,7 +96,11 @@ class App extends React.Component {
 						: <Redirect to="/"/>
 					}} />
 					{/* Home */}
-					<Route exact path="/" component={Home} />
+					<Route exact path="/" render={(props)	 => {
+						return currentUser 
+						? <UserProfile {...props} currentUser={currentUser}/>
+						: <Home />
+					}} />
 
 				</Switch> 
 			</div>
