@@ -36,27 +36,34 @@ class UserProfile extends React.Component{
                 <div className='UserProfile'>
                       
                         <h1>Posts</h1>
-                            <ul>
+                            <ul className="cardstack" id="tradeItem">
                                 {posts.map((post)=>{
                                     return(
-                                        <div className="form-group row">
-                                        <div className="col-md-3 card" id="middle">
-                                              <div className="card-body">
-                                        <li key={post._id}>
-                                            <Link className="card-title"to="/">{post.title}</Link> 
-                                            <button className="card-link">𝗫</button> 
-                                            <button className="card-link">Edit</button>
-                                        </li>
+                                        <div className="row">
+                                            <div className="container">
+                                                 <div className=" col-xs-12 col-sm-6 col-md-3 card" >
+                                                     <div className="thumbnail">
+                                                     <img src="http://placehold.it/500x250/EEE"/>
+                                                     <div class="caption">
+                                                         <h4>Thumbnail label</h4>
+                                                             <div className="card-body">
+                                                              <li key={post._id}>
+                                                                <p> <Link className="card-title"to="/">{post.title}</Link> </p>
+                                                                <a role="button" class="btn btn-default btn-xs pull-right"
+                                                                    href="#"><i class="glyphicon glyphicon-edit"></i></a>  <a role="button" class="btn btn-info btn-xs" href="#">Button</a> 
+                                                                <a role="button" class="btn btn-default btn-xs" href="#">Button</a>
+                                                             </li>
+                                                          </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
                                     )
                                 })}
                             </ul>
                     
-                    <Link to={`/profile/${this.props.currentUser._id}/edit`}>
-                        <button>Edit Profile</button>
-                    </Link>
+                   
                 </div>
             )
         }
@@ -73,9 +80,6 @@ class UserProfile extends React.Component{
 
 export default UserProfile
 
-// <div class=" UserProfilecard" style="width: 20rem;">
-//   <img class="card-img-top" src="..." alt="Card image cap">
-//   <div class="card-body">
-//     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-//   </div>
-// </div>
+{/* <Link to={`/profile/${this.props.currentUser._id}/edit`}>
+<button className="edit-link btn btn-submit">Edit Profile</button>
+</Link> */}

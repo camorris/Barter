@@ -4,23 +4,28 @@
  }
  
 h1 {
-  font-size: 24px;
+  font-size: 40px !important;
   margin-bottom: 12px;
   text-align: center;
 }
  
   img {
-   max-height: 5.75rem !important;
-   display: inline;
+    position: relative;
+    left: 0;
+    right: 0;
+    margin: auto; 
+    height:50px !important;
+   
  }
  
-#middle{
-  text-align: left;
-  position: center;
-  margin: 0 auto;
-  margin-top: 30px;
+// #middle{
+//   text-align: left;
+//   position: center;
+//   margin: 0 auto;
+//   margin-top: 30px;
+//   position: horizontal;
   
-}
+// }
  .btn.btn-submit{
    background-color: #e62aff;
    color: white;
@@ -30,14 +35,29 @@ textarea:hover , input:hover{
 }
 
 body{
-  font-family: 'Saira Semi Condensed', sans-serif;
+  font-family: 'Saira Semi Condensed', sans-serif !important;
+ 
   
 }
 
+.card:hover{
+ border-color:1px solid red;
+}
 .card{
-width: 20rem;
+width: 20rem ;
+margin-bottom: 20px;
+margin-right: 20px;
+text-align: center;
+position: static;
 
 }
+
+.card-body{
+ display: inline;
+ 
+}
+
+
 
 .card-title{
 font-size:24px;
@@ -55,12 +75,51 @@ margin-top: 30px;
   
 }
 
+.edit-link{
+  text-align: left;
+  position: fixed;
+  margin: 0 auto;
+  
+}
+
 .nav-link, .nav-item {
-  color: white !important;
+  color: black !important;
   font-size:20px;
   text-align: block;
 }
-
+.nav-link:hover, .nav-item:hover{
+  color:cyan !important;
+}
 .navbar-brand{
-  color:white !important;
+  color:black !important;
+}
+
+.navbar{
+  -webkit-box-shadow: 0 8px 6px -6px #999 ;
+  -moz-box-shadow: 0 8px 6px -6px #999 ;
+  box-shadow: 0px 8px 6px -6px #333 !important ;
+  margin-top: 10px;
+  margin: auto 0;
+  background-color: rgb(255, 255, 255) !important;
+}
+
+.navbar-toggler{
+  float: right !important;
+  margin-left: 40px !important;
+  
+}
+#tradeItem{
+  display:block !important;
+  margin: auto !important;
+}
+.row:hover{
+  transform: rotate3d(20,0,20,20deg)
+}
+
+
+.homeImage {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 1128px;
+  height:400px !important;
 }

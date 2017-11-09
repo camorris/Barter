@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import BarterImage from '../BarterNew.png'
+
 
 class NavBar extends React.Component {
 
@@ -8,24 +10,32 @@ class NavBar extends React.Component {
 	}
 
 	// 1. create a method that you'll run when you click on the toggle menu button (toggleMenu())
+
+	toggleMenu(){
+		this.setState({menuOpen: !this.state.menuOpen})
+	}
+
 	// 2. in that method, you 'll update the state to switch the menuOpen value to its opposite
 
 	render() {
 		const { currentUser } = this.props
 		return (
 	
-			<nav class="navbar navbar-expand-lg navbar-light bg-dark navbar-toggleable-md  bg-faded">
+			<nav class="navbar navbar-expand-lg navbar-light bg-dark navbar-toggleable-mr  bg-faded">
 			<div className='NavBar'>
-				<Link className="navbar-brand" to="/">Barter</Link>
-				<button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<button onClick={ this.toggleMenu.bind(this)} className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<span className="navbar-toggler-icon"></span>
 				</button>
-				<div className={`collapse navbar-collapse ${this.state.menuOpen ? 'show' : '' }`} id="navbarNavAltMarkup">
+				<div  className={`collapse navbar-collapse  ${this.state.menuOpen ? 'show' : '' }`} id="navbarNavAltMarkup">
 					<div className="navbar-nav">
 				{currentUser
 					? (
 						<span>
+							
 							<ul className="navbar-nav">
+							<li className="nav-item  nav-link active">
+							<Link className="navbar-brand" to="/"><img src={BarterImage} alt="logo"/></Link>
+							</li>
 								<li className="nav-item  nav-link active">
 							{<Link className="nav-item nav-link" to="/post">New Post</Link>}
 							</li>
@@ -35,8 +45,13 @@ class NavBar extends React.Component {
 							<li className="nav-item nav-link active">
 							<Link className="nav-item nav-link" to={`/profile/${currentUser._id}`}>Profile</Link>
 							</li>
-							<li className="nav-item nav-link active">
-									<a className="nav-item nav-link">Hello {currentUser.name}!</a>
+							<li className= "nav-item dropdown nav-link active">
+									<a onClick={ this.toggleMenu.bind(this)} className="nav-item nav-link dropdown-toggle" >Hello {currentUser.name}!</a>
+									<div className={`dropdown-menu nav-item dropdown nav-link active ${this.state.menuOpen ? 'show' : '' }`} aria-labelledby="navbarDropdownMenuLink">
+									<Link className="dropdown-item"to={`/profile/${this.props.currentUser._id}/edit`}>
+                        <button >Edit Profile</button>
+                    </Link>
+										</div>
 							</li>
 						</ul>
 					
@@ -45,6 +60,9 @@ class NavBar extends React.Component {
 					: (
 						<span>
 							<ul className="navbar-nav">
+							<li className="nav-item  nav-link active">
+							<Link className="navbar-brand" to="/"><img src={BarterImage} alt="logo"/></Link>
+							</li>
 							<li className="nav-item nav-link active">
 							<Link className="nav-item nav-link" to="/login">Log In</Link>
 							</li>
