@@ -51,7 +51,7 @@ class UserProfile extends React.Component{
             return(
                 <div className='UserProfile'>
                       
-                        <h1>Posts</h1>
+                        <h1>What you are Trading</h1>
                             <ul className="cardstack" id="tradeItem">
                                 {posts.map((post)=>{
                                                 let image = post.image
@@ -103,10 +103,10 @@ class UserProfile extends React.Component{
                                                                 <p> <Link className="card-title" to={`/posts/${post.location}/${post._id}`}>{post.title}</Link> </p>
                                                                 <div><img src={image} alt="Category"/></div>
                                                                 <Link to={`/posts/${post.location}/${post._id}/edit`}>
-                                                                    <a role="button" class="btn btn-default btn-xs pull-right"
-                                                                    href="#"><i class="glyphicon glyphicon-edit"></i>
-                                                                    </a><a role="button" class="btn btn-submit btn-xs" href="#">edit</a> </Link>
-                                                                <a role="button" class="btn btn-default btn-xs" href="#">X</a>
+                                                                    <a role="button" className="btn btn-default btn-xs pull-right"
+                                                                    href="#"><i className="glyphicon glyphicon-edit"></i>
+                                                                    </a><a role="button" className="btn btn-submit btn-xs" id="editTrade" href="#">edit</a> </Link>
+                                                               
                                                              </li>
                                                           </div>
                                                         </div>

@@ -65,20 +65,21 @@ class EditPost extends React.Component{
         else{
             const {title, body, item, exchangeFor, location, image, cashValue} = this.state.fields
             return(
-                <div>
+                <div className="col-sm-6 col-sm-offset-6"id="middle">
 
                 <h1>Edit the Post!</h1>
                 <form onChange={this.onInputChange.bind(this)} onSubmit={this.onFormSubmit.bind(this)}>
                     <div className="form-group">
-                        <input className="form-control" type="text"  name="title" defaultValue={title} />
+                        <input className="form-control" type="text" placeholder="title" name="title" defaultValue={title} />
                     </div>
                     <div className="form-group">
-                        <input className="form-control" type="text" name="item" defaultValue={item} />
+                        <input className="form-control" type="text" placeholder="item" name="item" defaultValue={item} />
                     </div>
                     <div className="form-group">
-                        <input className="form-control" type="text" name="exchangeFor" defaultValue={exchangeFor} />
+                        <input className="form-control" type="text" placeholder="Exchange For" name="exchangeFor" defaultValue={exchangeFor} />
                     </div>
                     <div className="form-group">
+
 					<label htmlFor="location">Location:  </label>
 						<select name="location">
                             <option value="LosAngeles">Los Angeles</option>
@@ -106,14 +107,14 @@ class EditPost extends React.Component{
 					  
                     </div>
                     <div className="form-group">
-                        <input className="form-control" type="text" name="cashValue" defaultValue={cashValue} />
+                        <input className="form-control" type="text" placeholder="optional cash value" name="cashValue" defaultValue={cashValue} />
                     </div>
                     <div className="form-group">
-                        <textarea rows='5' cols='25' placeholder="body" name="body" defaultValue={body} />
+                        <textarea className="form-control"rows='5' cols='25' placeholder="body" name="body" defaultValue={body} />
                     </div>
-                    <button className="btn btn-submit">BartR!</button>
+                    <button className="btn btn-submit">Barter!</button>
                 </form>
-                <button onClick={this.onDeleteClick.bind(this)}>DELETE</button>
+                <button className="btn btn-submit" onClick={this.onDeleteClick.bind(this)}>DELETE</button>
 
                 </div>
             )
