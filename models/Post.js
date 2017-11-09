@@ -7,7 +7,7 @@ const
         exchangeFor: {type: String, required: true},
         location: {type: String, required: true},
         userId: {type: String, required: true},
-        image: {type: String},
+        image: {type: String, required: true},
         cashValue: {type: Number}
     })
 
