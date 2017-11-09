@@ -5,7 +5,7 @@ class Home extends React.Component  {
 
   state = {
 		slides: [
-			"http://cdn.pcwallart.com/images/city-street-wallpaper-4.jpg", 
+			"http://www.lepfitness.co.uk/wp-content/uploads/2016/10/Personal-Trainer.jpg", 
 			"http://clv.h-cdn.co/assets/16/31/980x490/landscape-1470243304-gettyimages-513055773.jpg", 
 			"https://snowbrains.com/wp-content/uploads/2014/02/beautiful-town-in-the-shadow-of-mountain-hdr-hd-wallpaper-35489.jpg",
 			"http://ee24.com/media/articles/uploads/2013/10/17/schiltach-black-forest.jpg",
@@ -45,47 +45,48 @@ class Home extends React.Component  {
 	render(){
 	return (
 		<div className='Home'>
+			<div className="jumbotron jumbotron-fluid bg-white">
+			<div className="container">
+  <h1 className="display-3">Welcome, This is Barter!</h1>
+  <p className="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+  <hr className="my-4"/>
+  <p className="lead" >It uses utility classNamees for typography and spacing to space content out within the larger container.</p>
+ 
+</div>
+</div>
+			<h2 className='imageText'>Things People are Currently Trading</h2>
 			<div className="mainImage">
 					<img className="homeImage" src={this.state.currentPhoto} alt="picture"/>
-						<h2 className='imageText'>Things People are Currently Trading</h2>
 		</div>
 	
-		<div class="row text-center">
-      <div class="col-md-4">
-        <span class="fa-stack fa-4x">
-          <i class="fa fa-circle fa-stack-2x"></i>
-          <i class="fa fa-home fa-stack-1x fa-inverse" ></i>
+		<div className="row text-center">
+      <div className="col-md-4">
+        <span className="fa-stack fa-4x">
+          <i className="fa fa-square fa-spin fa-stack-2x"></i>
+          <i className="fa fa-list fa-stack-1x fa-inverse" ></i>
         </span>
-        <h4 class="service-heading">Property Owners</h4>
-        <p class="text-muted">Never miss a step in managing your property, residents and things you love to do.</p>
+        <h4 className="service-heading">List Items and Services</h4>
+        <p className="text-muted">Let the world know what you have to barter</p>
       </div>
-      <div class="col-md-4">
-        <span class="fa-stack fa-4x">
-          <i class="fa fa-circle fa-stack-2x"></i>
-          <i class="fa fa-handshake-o fa-stack-1x fa-inverse"></i>
+      <div className="col-md-4">
+        <span className="fa-stack fa-4x">
+          <i className="fa fa-square fa-stack-2x"></i>
+          <i className="fa fa-refresh fa-spin fa-stack-1x fa-inverse"></i>
         </span>
-        <h4 class="service-heading">Residents</h4>
-        <p class="text-muted">Always stay up to date with monthly expenses, simplistic communication and daily community events.</p>
+        <h4 className="service-heading">Barter 24/7</h4>
+        <p className="text-muted">Trade your items or services with people around the world</p>
       </div>
-      <div class="col-md-4">
-        <span class="fa-stack fa-4x">
-          <i class="fa fa-circle fa-stack-2x"></i>
-          <i class="fa fa-plus-square-o fa-stack-1x fa-inverse"></i>
+      <div className="col-md-4">
+        <span className="fa-stack fa-4x">
+          <i className="fa fa-square fa-spin fa-stack-2x"></i>
+          <i className="fa fa-heart  fa-stack-1x fa-inverse"></i>
         </span>
-        <h4 class="service-heading">Guests</h4>
-        <p class="text-muted">Browse through a wide range of vacant properties in order to apply for your home sweet home.</p>
+        <h4 className="service-heading">Save Money</h4>
+        <p className="text-muted">Get the things you want without spending a dime</p>
       </div>
     </div>
 
-		<div class="jumbotron">
-  <h1 class="display-3">Hello, world!</h1>
-  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-  <hr class="my-4"/>
-  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-  <p class="lead">
-    <a class="btn btn-submit btn-lg" href="#" role="button">Learn more</a>
-  </p>
-</div>
+
 		</div>
 
 	)

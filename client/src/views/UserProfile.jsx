@@ -94,10 +94,8 @@ class UserProfile extends React.Component{
                                     return(
 
                                                  <div className=" col-xs-12 col-sm-6 col-md-3 card" >
-                                                     <div className="thumbnail">
-                                                     <img src="http://placehold.it/500x250/EEE"/>
                                                      <div class="caption">
-                                                         <h4>Thumbnail label</h4>
+                                                        
                                                              <div className="card-body">
                                                               <li key={post._id}>
                                                                 <p> <Link className="card-title" to={`/posts/${post.location}/${post._id}`}>{post.title}</Link> </p>
@@ -111,7 +109,7 @@ class UserProfile extends React.Component{
                                                           </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                
 
                                     )
                                 })}

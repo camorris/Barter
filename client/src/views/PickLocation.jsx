@@ -41,8 +41,8 @@ class FindLocale extends React.Component{
         //if there are no posts, only display the form
         if(this.state.posts.length < 1){
             return(
-                <div>
-                    <h1>Find Some Posts!</h1>
+                <div className="col-sm-6 col-sm-offset-6" id="middle">
+                    <h1 className="col-sm-6 col-sm-offset-6" id="middle">Find Some Posts!</h1>
                     <form onSubmit={this.onFormSubmit.bind(this)} onChange={this.onFormChange.bind(this)}>
                         <select name="location">
                             <option value="LosAngeles">Los Angeles</option>
@@ -52,7 +52,7 @@ class FindLocale extends React.Component{
                             <option value="Hogwarts">Hogwarts</option>
                             <option value="testLoc">testLoc</option>
                         </select>
-                        <button>Find Stuff!</button>
+                        <button className="btn btn-submit">Find Stuff!</button>
                     </form>
                 </div>
             )
@@ -60,7 +60,7 @@ class FindLocale extends React.Component{
         //otherwise display the posts we found after the form
         else{
             return(
-                <div>
+                <div className="col-sm-6 col-sm-offset-6" id="middle">
                     <h1>Find Some Posts!</h1>
                     <form onSubmit={this.onFormSubmit.bind(this)} onChange={this.onFormChange.bind(this)}>
                         <select name="location">
@@ -71,7 +71,7 @@ class FindLocale extends React.Component{
                             <option value="Hogwarts">Hogwarts</option>
                             <option value="testLoc">testLoc</option>
                         </select>
-                        <button>Find Stuff!</button>
+                        <button className="btn btn-submit">Find Stuff!</button>
                     </form>
                     <hr/>
 

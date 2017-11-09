@@ -7,11 +7,14 @@ h1 {
   margin-bottom: 20px !important;
   text-align: center; }
 
+h2 {
+  font-size: 40px !important;
+  margin-top: 125px !important;
+  text-align: center; }
+
 .imageText {
   z-index: 1;
-  position: relative;
-  font-size: 30px;
-  color: red; }
+  margin-bottom: 20px; }
 
 img {
   position: relative;
@@ -30,13 +33,17 @@ img {
 .btn.btn-submit {
   background-color: #e62aff;
   color: white;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  margin-left: 12px; }
 
 textarea:hover, input:hover {
   box-shadow: 0 0 1em cyan !important; }
 
 body {
   font-family: 'Saira Semi Condensed', sans-serif !important; }
+
+.fa-square {
+  color: rgba(35, 231, 231, 0.726); }
 
 .card:hover {
   border-color: 1px solid red; }
@@ -49,7 +56,13 @@ body {
   display: inline-block !important; }
 
 .card-body {
-  display: inline; }
+  display: inline;
+  text-align: center;
+  position: center;
+  margin: 0 auto; }
+
+#editTrade {
+  float: left; }
 
 .container {
   width: 100%; }
@@ -108,9 +121,29 @@ body {
   box-shadow: 10px 8px 20px -6px rgba(51, 51, 51, 0.842) !important; }
 
 .homeImage {
-  margin-top: 125px;
+  margin-top: 25px;
   margin-bottom: 20px;
-  width: 100%;
+  width: 2000px !important;
   height: 400px !important;
   position: relative;
   z-index: 0; }
+
+.fa {
+  margin-top: 10px;
+  margin-bottom: 20px; }
+
+.jumbotron, .jumbotron-fluid {
+  margin: 0 auto;
+  margin-top: 150px;
+  box-shadow: 0px 8px 6px -6px #9c9c9c !important;
+  border: 1px solid magenta;
+  padding: .5%;
+  width: 75%; }
+
+.container, .display-3, .lead, .my-4 {
+  border: magenta;
+  text-align: center;
+  margin-bottom: 20px; }
+
+.my-4 {
+  width: 88%; }
