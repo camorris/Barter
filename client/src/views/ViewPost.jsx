@@ -46,17 +46,54 @@ state={
             //store that information in an easy to read way, and display content
             const post = this.state.post
             const user = this.state.user
+            var image = post.image
+            switch(post.image){
+                case 'Art':
+                    image=Art
+                    break;
+                case 'Auto':
+                    image=Auto
+                    break;
+                case 'Bike':
+                    image=Bike
+                    break;
+                case 'Books':
+                    image=Books
+                    break;
+                case 'Electronics':
+                    image=Electronics
+                    break;
+                case 'Furniture':
+                    image=Furniture
+                    break;
+                case 'Games':
+                    image=Games
+                    break;
+                case 'Guitar':
+                    image=Guitar
+                    break;
+                case 'Photography':
+                    image=Photography
+                    break;
+                case 'Toys':
+                    image=Toys
+                    break;
+                default:
+                    image = post.img
+                    
+            }
             return(
                 <div>
                     <Link to={`/posts/${post.location}/${post._id}/edit`}><button>Edit Post</button></Link>
                     <h1>{post.title}</h1>
                     <div>
+                        <div><img src={image} alt="Category"/></div>
+                    </div>
+                    <div>
                         <div>{user.name} wants to exchange: {post.item}</div> <div>{user.name} wants to recieve: {post.exchangeFor}</div>
                     </div>
                     <hr/>
-                    <div>
-                        <div>{post.image}</div>
-                    </div>
+
                     <div>
                         <p>{post.body}</p>
                     </div>

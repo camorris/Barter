@@ -4,7 +4,7 @@ import axios from 'axios'
 
 class NewPost extends React.Component{
 	state = {
-		fields: { title: '', body: '', item: '', exchangeFor:'', location:'LosAngeles',image:'', cashValue:''},
+		fields: { title: '', body: '', item: '', exchangeFor:'', location:'LosAngeles',image:'Art', cashValue:''},
 		user: undefined
 	};
 
@@ -16,6 +16,7 @@ class NewPost extends React.Component{
 	}
 	//when the input changes, update the state of the fields
 	onInputChange(evt){
+		console.log(evt.target.value)
 		this.setState({
 			fields: {
 				...this.state.fields,
@@ -38,7 +39,8 @@ class NewPost extends React.Component{
 	}
 	//display the form
 	render(){
-		const {title, body, item, exchangeFor, location, image, cashValue} = this.state.fields
+		console.log(this.state.fields)
+		const {title, body, item, exchangeFor, cashValue} = this.state.fields
 		return (
 			<div  className='NewPost col-sm-6 col-sm-offset-6' id="middle">
 		
