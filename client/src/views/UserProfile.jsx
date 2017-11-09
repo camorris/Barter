@@ -53,6 +53,7 @@ class UserProfile extends React.Component{
                       
                         <h1>What you are Trading</h1>
                             <ul className="cardstack" id="tradeItem">
+                            <div className="container">
                                 {posts.map((post)=>{
                                                 let image = post.image
                                                 switch(post.image){
@@ -91,8 +92,7 @@ class UserProfile extends React.Component{
                                                         
                                                 }
                                     return(
-                                        <div className="row">
-                                            <div className="container">
+
                                                  <div className=" col-xs-12 col-sm-6 col-md-3 card" >
                                                      <div className="thumbnail">
                                                      <img src="http://placehold.it/500x250/EEE"/>
@@ -112,10 +112,11 @@ class UserProfile extends React.Component{
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div>
+
                                     )
                                 })}
+                            </div>
+
                             </ul>
                     
                    
