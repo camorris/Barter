@@ -47,8 +47,8 @@ class EditPost extends React.Component{
     
     onDeleteClick(){
         axios({method: 'delete', url:`/api/posts/${this.state.post.location}/${this.state.post._id}`})
-        .then((res)=>{
-            this.props.history.push(`/`)
+        .then((post)=>{
+            this.props.history.push(`/profile/${this.state.post.userId}`)
         })
     }
 
