@@ -1,53 +1,92 @@
 import React from 'react'
+import GuitarImage from '../homeImages/guitar.jpg'
+import pogoImage from '../homeImages/pogostick.jpg'
+import snapBackImage from '../homeImages/snapback.jpg'
+import xboxImage from '../homeImages/xbox.jpg'
 
+var i = 0
+class Home extends React.Component  {
 
-const Home = (props) => {
-  console.log(props)
+  state = {
+		slides: [
+					GuitarImage, pogoImage, snapBackImage, xboxImage
+		],
+		currentPhoto: ''
+	}
+// i changes because the interval method setInterval
+	componentDidMount() {
+		this.getImage(0)
+		this.interval = setInterval(() => {
+			this.changeIndex()
+		}, 5000)
+	}
+
+	changeIndex() {
+		if(i < this.state.slides.length -1) {
+	//placed ++ changing it prior to 
+			++i
+		} else {
+			i = 0
+		}
+		this.getImage(i)
+	}
+//this set current photo with i
+	getImage(i) {
+		this.setState({currentPhoto: this.state.slides[i]})
+	}
+
+	componentWillUnmount() {
+		clearInterval(this.interval)
+	}
+	render(){
 	return (
 		<div className='Home'>
-			<div className="mainImage">
-		<img className="homeImage" src="https://www.mynsfuture.ca/sites/default/files/institution-images/NSCAD%20Photo.jpg" alt="picture"/>
+			<div className="jumbotron jumbotron-fluid bg-white">
+			
+  			<h3 className="display-3">Welcome, This is Barter!</h3>
+	
+  			<p className="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+  			<hr className="my-4"/>
+  			<p className="lead" >It uses utility classNamees for typography and spacing to space content out within the larger container.</p>
+	
 		</div>
-
-		<div class="row text-center">
-      <div class="col-md-4">
-        <span class="fa-stack fa-4x">
-          <i class="fa fa-circle fa-stack-2x text-partmint"></i>
-          <i class="fa fa-home fa-stack-1x fa-inverse" ></i>
+			<h2 className='imageText'>Things People are Currently Trading</h2>
+			<div className="mainImage">
+					<img className="homeImage" src={this.state.currentPhoto} alt="picture"/>
+			</div>
+	
+		<div className="row text-center">
+      <div className="col-md-4">
+        <span className="fa-stack fa-4x">
+          <i className="fa fa-square fa-spin fa-stack-2x"></i>
+          <i className="fa fa-list fa-stack-1x fa-inverse" ></i>
         </span>
-        <h4 class="service-heading">Property Owners</h4>
-        <p class="text-muted">Never miss a step in managing your property, residents and things you love to do.</p>
+        <h4 className="service-heading">List Items and Services</h4>
+        <p className="text-muted">Let the world know what you have to barter</p>
       </div>
-      <div class="col-md-4">
-        <span class="fa-stack fa-4x">
-          <i class="fa fa-circle fa-stack-2x text-partmint"></i>
-          <i class="fa fa-handshake-o fa-stack-1x fa-inverse"></i>
+      <div className="col-md-4">
+        <span className="fa-stack fa-4x">
+          <i className="fa fa-square fa-stack-2x"></i>
+          <i className="fa fa-refresh fa-spin fa-stack-1x fa-inverse"></i>
         </span>
-        <h4 class="service-heading">Residents</h4>
-        <p class="text-muted">Always stay up to date with monthly expenses, simplistic communication and daily community events.</p>
+        <h4 className="service-heading">Barter 24/7</h4>
+        <p className="text-muted">Trade your items or services with people around the world</p>
       </div>
-      <div class="col-md-4">
-        <span class="fa-stack fa-4x">
-          <i class="fa fa-circle fa-stack-2x text-partmint"></i>
-          <i class="fa fa-plus-square-o fa-stack-1x fa-inverse"></i>
+      <div className="col-md-4">
+        <span className="fa-stack fa-4x">
+          <i className="fa fa-square fa-spin fa-stack-2x"></i>
+          <i className="fa fa-heart  fa-stack-1x fa-inverse"></i>
         </span>
-        <h4 class="service-heading">Guests</h4>
-        <p class="text-muted">Browse through a wide range of vacant properties in order to apply for your home sweet home.</p>
+        <h4 className="service-heading">Save Money</h4>
+        <p className="text-muted">Get the things you want without spending a dime</p>
       </div>
     </div>
 
-		<div class="jumbotron">
-  <h1 class="display-3">Hello, world!</h1>
-  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-  <hr class="my-4"/>
-  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-  <p class="lead">
-    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-  </p>
-</div>
+
 		</div>
 
 	)
+}
 }
 
 export default Home
