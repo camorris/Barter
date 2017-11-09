@@ -33,7 +33,7 @@ class NewPost extends React.Component{
 		}})
 		//then redirect them to their new post!
 		.then((post)=>{
-			if (post.success){
+			if (post.data.success){
 				setTimeout(()=>{
 					console.log(post)
 					this.props.history.push(`/posts/${post.data.post.location}/${post.data.post._id}`)

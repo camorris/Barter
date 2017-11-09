@@ -1,19 +1,15 @@
 import React from 'react'
+import GuitarImage from '../homeImages/guitar.jpg'
+import pogoImage from '../homeImages/pogostick.jpg'
+import snapBackImage from '../homeImages/snapback.jpg'
+import xboxImage from '../homeImages/xbox.jpg'
 
 var i = 0
 class Home extends React.Component  {
 
   state = {
 		slides: [
-			"http://www.lepfitness.co.uk/wp-content/uploads/2016/10/Personal-Trainer.jpg", 
-			"http://clv.h-cdn.co/assets/16/31/980x490/landscape-1470243304-gettyimages-513055773.jpg", 
-			"https://snowbrains.com/wp-content/uploads/2014/02/beautiful-town-in-the-shadow-of-mountain-hdr-hd-wallpaper-35489.jpg",
-			"http://ee24.com/media/articles/uploads/2013/10/17/schiltach-black-forest.jpg",
-			"https://www.quickenloans.com/blog/wp-content/uploads/2015/03/iStock_000010342358Small.jpg",
-			"https://i.pinimg.com/originals/99/7b/8e/997b8e0857cc47d79d214ff1848d481a.jpg",
-			"http://4.bp.blogspot.com/-zuaJsxrmy1o/UF4CKn8k1JI/AAAAAAAAJ1k/J77LKRWrVKw/s1600/IMG_1748.jpg",
-			"https://saintpaul.s3.amazonaws.com/CMS/1753/st._paul_skyline__large-slideshow.jpg"
-			
+					GuitarImage, pogoImage, snapBackImage, xboxImage
 		],
 		currentPhoto: ''
 	}
@@ -46,18 +42,18 @@ class Home extends React.Component  {
 	return (
 		<div className='Home'>
 			<div className="jumbotron jumbotron-fluid bg-white">
-			<div className="container">
-  <h1 className="display-3">Welcome, This is Barter!</h1>
-  <p className="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-  <hr className="my-4"/>
-  <p className="lead" >It uses utility classNamees for typography and spacing to space content out within the larger container.</p>
- 
-</div>
-</div>
+			
+  			<h3 className="display-3">Welcome, This is Barter!</h3>
+	
+  			<p className="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+  			<hr className="my-4"/>
+  			<p className="lead" >It uses utility classNamees for typography and spacing to space content out within the larger container.</p>
+	
+		</div>
 			<h2 className='imageText'>Things People are Currently Trading</h2>
 			<div className="mainImage">
 					<img className="homeImage" src={this.state.currentPhoto} alt="picture"/>
-		</div>
+			</div>
 	
 		<div className="row text-center">
       <div className="col-md-4">

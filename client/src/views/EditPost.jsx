@@ -114,7 +114,7 @@ class EditPost extends React.Component{
                     </div>
                     <button className="btn btn-submit">Barter!</button>
                 </form>
-                <button className="btn btn-submit" onClick={this.onDeleteClick.bind(this)}>DELETE</button>
+                <button className="btn btn-submit btn-lg" onClick={this.onDeleteClick.bind(this)}>DELETE</button>
 
                 </div>
             )
