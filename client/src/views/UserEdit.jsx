@@ -98,6 +98,7 @@ class UserEdit extends React.Component{
                         </div>
                         <button className="btn btn-submit">Edit Profile</button>
                     </form>
+                    <button onClick={this.onDeleteClick.bind(this)}>DELETE</button>
                 </div>
             )
         }
