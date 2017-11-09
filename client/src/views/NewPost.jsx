@@ -8,12 +8,13 @@ class NewPost extends React.Component{
 		user: undefined
 	};
 
+	//when the component mounts, set up our user reference based on the currentUser prop
 	componentDidMount(){
-		console.log('current user: ',this.props.currentUser)
 		this.setState({
 			user: this.props.currentUser
 		})
 	}
+	//when the input changes, update the state of the fields
 	onInputChange(evt){
 		this.setState({
 			fields: {
@@ -22,19 +23,20 @@ class NewPost extends React.Component{
 			}
 		})
 	}
+	//when they submit the form...
 	onFormSubmit(evt) {
 		evt.preventDefault()
+		//send an axios request to post it to the databse
 		axios({method: 'post',url:`/api/posts/${this.state.fields.location}`, data:{
 			...this.state.fields
 		}})
+		//then redirect them to their new post!
 		.then((post)=>{
-			// console.log(post.data.post.userId)
 			this.props.history.push(`/posts/${post.data.post.location}/${post.data.post._id}`)
-			// this.props.history.push(`/`)
-			
 		})
 
 	}
+	//display the form
 	render(){
 		const {title, body, item, exchangeFor, location, image, cashValue} = this.state.fields
 		return (
@@ -46,9 +48,11 @@ class NewPost extends React.Component{
 				<div className="form-group">
 					<input className="form-control" type="text" placeholder="title" name="title" value={title} />
 					</div>
-
 					<div className="form-group">
 					<input className="form-control" type="text" placeholder="item" name="item" value={item} />
+					</div>
+					<div className="form-group">
+					<input className="form-control" type="text" placeholder="item wanted" name="exchangeFor" value={exchangeFor} />
 					</div>
 					<div className="form-group">
 					  <input className="form-control" type="text" placeholder="location" name="location" value={location} />

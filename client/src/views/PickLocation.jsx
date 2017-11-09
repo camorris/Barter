@@ -3,13 +3,16 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 
 class FindLocale extends React.Component{
+    //default the state to the first option in our form select, 
+        // that way someone can immediately hit submit and still get results
     state = {
         location:'LosAngeles',
         posts: []
     }
+
+    //when they submit, get the location from the tate and display posts
     onFormSubmit(evt){
         evt.preventDefault()
-
         axios({method:'get', url:`/api/posts/${this.state.location}`})
         .then((localPosts)=>{
             this.setState({
@@ -17,6 +20,7 @@ class FindLocale extends React.Component{
             })
         })
     }
+    //when the form changes, update the location
     onFormChange(evt){
         this.setState({
             location: evt.target.value
@@ -24,7 +28,8 @@ class FindLocale extends React.Component{
     }
 
     render(){
-        if(this.state.posts < 1){
+        //if there are no posts, only display the form
+        if(this.state.posts.length < 1){
             return(
                 <div>
                     <h1>Find Some Posts!</h1>
@@ -42,6 +47,7 @@ class FindLocale extends React.Component{
                 </div>
             )
         }
+        //otherwise display the posts we found after the form
         else{
             return(
                 <div>

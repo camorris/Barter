@@ -21,7 +21,7 @@ class NavBar extends React.Component {
 		const { currentUser } = this.props
 		return (
 	
-			<nav class=" fixed-top navbar navbar-expand-lg navbar-light bg-dark navbar-toggleable-mr  bg-faded">
+			<nav className=" fixed-top navbar navbar-expand-lg navbar-light bg-dark navbar-toggleable-mr  bg-faded">
 			<div className='NavBar'>
 				<button onClick={ this.toggleMenu.bind(this)} className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<span className="navbar-toggler-icon"></span>

@@ -8,22 +8,31 @@ class UserProfile extends React.Component{
             postIds: []
         }
     }
+    //when the component mounts
     componentDidMount(){
+<<<<<<< HEAD
+=======
+        //store the user ID from the url params
+>>>>>>> 16a9d1932dc70ab424053a1ed3cf112300515f77
             const userID = this.props.match.params.id
+            //use it to get the user object
             axios({method: 'get', url:`/api/users/${userID}`})
             .then((thisUser)=>{
+                //and set it into the state
                 this.setState({
                     user: thisUser.data
                 })
+                // then fetch the posts
                 this.fetchPosts()
             })
-
     }
     fetchPosts(){
+        //get the posts using the user ID to sort
             axios({method:'get', url:`/api/posts/user/${this.state.user._id}`})
             .then((posts)=>{
                
                 this.setState({
+                    //and set them in the state
                     posts: posts.data
                 })
             })
@@ -31,6 +40,7 @@ class UserProfile extends React.Component{
     }
     render(){
         const posts = this.state.posts
+        //if there are posts, dynamically display the content
         if (posts){
             return(
                 <div className='UserProfile'>
@@ -48,9 +58,12 @@ class UserProfile extends React.Component{
                                                          <h4>Thumbnail label</h4>
                                                              <div className="card-body">
                                                               <li key={post._id}>
-                                                                <p> <Link className="card-title"to="/">{post.title}</Link> </p>
-                                                                <a role="button" class="btn btn-default btn-xs pull-right"
-                                                                    href="#"><i class="glyphicon glyphicon-edit"></i></a>  <a role="button" class="btn btn-submit btn-xs" href="#">edit</a> 
+                                                                <p> <Link className="card-title" to={`/posts/${post.location}/${post._id}`}>{post.title}</Link> </p>
+                                                                
+                                                                <Link to={`/posts/${post.location}/${post._id}/edit`}>
+                                                                    <a role="button" class="btn btn-default btn-xs pull-right"
+                                                                    href="#"><i class="glyphicon glyphicon-edit"></i>
+                                                                    </a><a role="button" class="btn btn-submit btn-xs" href="#">edit</a> </Link>
                                                                 <a role="button" class="btn btn-default btn-xs" href="#">X</a>
                                                              </li>
                                                           </div>
@@ -67,6 +80,7 @@ class UserProfile extends React.Component{
                 </div>
             )
         }
+        //otherwise tell them we are loading the posts
         else{
             return(
                 <div className='UserProfile'>
