@@ -45,6 +45,9 @@ class NavBar extends React.Component {
 							<li className="nav-item nav-link active">
 							<Link className="nav-item nav-link" to={`/profile/${currentUser._id}`}>Profile</Link>
 							</li>
+							<li className="nav-item nav-link active">
+							<Link className="nav-item nav-link" to={`/posts/find`}>Find Stuff!</Link>
+							</li>
 							<li className= "nav-item dropdown nav-link active">
 									<a onClick={ this.toggleMenu.bind(this)} className="nav-item nav-link dropdown-toggle" >Hello {currentUser.name}!</a>
 									<div className={`dropdown-menu nav-item dropdown nav-link active ${this.state.menuOpen ? 'show' : '' }`} aria-labelledby="navbarDropdownMenuLink">
@@ -68,6 +71,9 @@ class NavBar extends React.Component {
 							</li>
 							<li className="nav-item nav-link active">
 							<Link className="nav-item nav-link" to="/signup">Sign Up</Link>
+							</li>
+							<li className="nav-item nav-link active">
+							<Link className="nav-item nav-link" to={`/posts/find`}>Find Stuff!</Link>
 							</li>
 							</ul>
 						</span>

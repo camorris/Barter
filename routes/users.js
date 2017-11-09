@@ -14,6 +14,7 @@ const
         // }
   }
 
+
   usersRouter.route('/')
     .get(usersCtrl.index)
     .post(usersCtrl.create)

@@ -1,6 +1,16 @@
 import React from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import Art from "../icons/Art.png"
+import Auto from "../icons/Auto.png"
+import Bike from "../icons/Bike.png"
+import Books from "../icons/Books.png"
+import Electronics from "../icons/Electronics.png"
+import Furniture from "../icons/Furniture.png"
+import Games from "../icons/Games.png"
+import Guitar from "../icons/Guitar.png"
+import Photography from "../icons/Photography.png"
+import Toys from "../icons/Toys.png"
 
 class FindLocale extends React.Component{
     //default the state to the first option in our form select, 
@@ -67,9 +77,46 @@ class FindLocale extends React.Component{
 
                     <div className='postList'>
                             {this.state.posts.map((post)=>{
+                                let image = post.image
+                                switch(post.image){
+                                    case 'Art':
+                                        image=Art
+                                        break;
+                                    case 'Auto':
+                                        image=Auto
+                                        break;
+                                    case 'Bike':
+                                        image=Bike
+                                        break;
+                                    case 'Books':
+                                        image=Books
+                                        break;
+                                    case 'Electronics':
+                                        image=Electronics
+                                        break;
+                                    case 'Furniture':
+                                        image=Furniture
+                                        break;
+                                    case 'Games':
+                                        image=Games
+                                        break;
+                                    case 'Guitar':
+                                        image=Guitar
+                                        break;
+                                    case 'Photography':
+                                        image=Photography
+                                        break;
+                                    case 'Toys':
+                                        image=Toys
+                                        break;
+                                    default:
+                                        image = post.img
+                                        
+                                }
                                 return(
                                     <div key={post._id}>
                                         <h3><Link to={`/posts/${post.location}/${post._id}`}>{post.title}</Link></h3>
+                                        <div><img src={image} alt="Category"/></div>
                                         <p>User Offering: {post.item}</p>
                                         <p>User Wants: {post.exchangeFor}</p>
                                     </div>
