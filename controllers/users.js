@@ -37,6 +37,7 @@ module.exports = {
 	// find a existing user and update an existing user information
 	update: (req, res) => {
 		User.findById(req.params.id, (err, user) => {
+			if(!user.validPassword(req.body.passwordConfirm)) return res.json({success: false, message: "Invalid Credentials"})
   // Object.assign takes the data user and make sure specific fields are changed
       Object.assign(user, req.body)
 			user.save((err, updatedUser) => {
@@ -48,9 +49,9 @@ module.exports = {
 	// delete an existing user based of the id 
 	destroy: (req, res) => {
 		User.findByIdAndRemove(req.params.id, (err, user) => {
+			if(err) return res.json({message:'fail!', success: false})
 			res.json({success: true, message: "User deleted.", user})
 		})
-		res.json({message:'fail!', success: false})
 	},
 
 	// the login route

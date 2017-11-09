@@ -39,22 +39,25 @@ module.exports = {
   },
 
   update: (req, res)=>{
+    console.log(req.user)
     Posts.findById(req.params.id, (err, post)=>{
-      if (post.userId === jwt.decode(req.headers.token)._id)
+      if (post.userId == jwt.decode(req.headers.token)._id)
       {
         Object.assign(post, req.body)
         post.save((err, updatedPost) =>{
           res.json({success: true, message: "Post updated!", updatedPost})
         })
+      } else {
+        
+        res.json({success: false, message:`header id: ${jwt.decode(req.headers.token)._id}, owner id: ${post.userId}`})
       }
-      res.json({success: false, message:"you are not the owner!"})
     })
   },
 
   destroy: (req, res)=>{
     // res.json({success: true, message: "You are in the delete request"})
     Posts.findById(req.params.id, (err, post)=>{
-      if (post.userId === jwt.decode(req.headers.token)._id)
+      if (post.userId == jwt.decode(req.headers.token)._id)
       {
         post.remove()
         res.json({success: true, message:"Post TERMINATED 🤖", post})
