@@ -71,16 +71,14 @@ class NewPost extends React.Component{
 					  <select name="image">
                             <option value="Art">Art</option>
                             <option value="Auto">Auto / Auto Parts</option>
-                            <option value="Toys">Kids Toys</option>
-                            <option value="Bikes">Bikes</option>
-                            <option value="Boats">Boat</option>
+                            <option value="Bike">Bikes</option>
                             <option value="Books">Books</option>
-							<option value="Computer">Computer</option>
 							<option value="Electronics">Electronics</option>
 							<option value="Furniture">Furniture</option>
 							<option value="Games">Games</option>
+							<option value="Guitar">Music / Instruments</option>
 							<option value="Photography">Photography</option>
-							<option value="Music">Music / Instruments</option>
+                            <option value="Toys">Kids Toys</option>
                         </select>
 					  
 					</div>

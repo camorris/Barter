@@ -2,6 +2,16 @@
 import React from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import Art from "../icons/Art.png"
+import Auto from "../icons/Auto.png"
+import Bike from "../icons/Bike.png"
+import Books from "../icons/Books.png"
+import Electronics from "../icons/Electronics.png"
+import Furniture from "../icons/Furniture.png"
+import Games from "../icons/Games.png"
+import Guitar from "../icons/Guitar.png"
+import Photography from "../icons/Photography.png"
+import Toys from "../icons/Toys.png"
 
 class ViewPost extends React.Component{
     //set a null state at first
