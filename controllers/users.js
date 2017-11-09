@@ -15,8 +15,7 @@ module.exports = {
 
 	// show user- allows us to get one user
 	show: (req, res) => {
-		console.log("Current User:")
-    console.log(req.user)
+	
   // find a specific user based off id 
 		User.findById(req.params.id, (err, user) => {
 			res.json(user)

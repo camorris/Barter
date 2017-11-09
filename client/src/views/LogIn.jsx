@@ -5,9 +5,7 @@ class LogIn extends React.Component {
 	state = {
 		fields: { email: '', password: ''}
 	}
-	componentDidMount(){
-		console.log(this.props)
-	}
+
 	//change state on input
 	onInputChange(evt) {
 		this.setState({

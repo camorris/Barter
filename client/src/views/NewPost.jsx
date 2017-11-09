@@ -16,7 +16,7 @@ class NewPost extends React.Component{
 	}
 	//when the input changes, update the state of the fields
 	onInputChange(evt){
-		console.log(evt.target.value)
+	
 		this.setState({
 			fields: {
 				...this.state.fields,
@@ -34,15 +34,11 @@ class NewPost extends React.Component{
 		//then redirect them to their new post!
 		.then((post)=>{
 			if (post.data.success){
-				setTimeout(()=>{
-					console.log(post)
 					this.props.history.push(`/posts/${post.data.post.location}/${post.data.post._id}`)
-				}, 500)
-	
-			}
+				}
+
 			else{
 				alert('Whoops! Something went wrong!')
-				console.log(post)
 			}
 
 		})
@@ -50,7 +46,7 @@ class NewPost extends React.Component{
 	}
 	//display the form
 	render(){
-		console.log(this.state.fields)
+	
 		const {title, body, item, exchangeFor, cashValue} = this.state.fields
 		return (
 			<div  className='NewPost col-sm-6 col-sm-offset-6' id="middle">

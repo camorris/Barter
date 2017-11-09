@@ -15,6 +15,7 @@ mongoose.connect(MONGODB_URI, (err)=>{
 })
 
 app.use(logger('dev'))
+app.use(express.static(`${__dirname}/client/build`))
 app.use(bodyParser.json())
 
 app.get('/api',(req,res)=>{
@@ -24,7 +25,9 @@ app.get('/api',(req,res)=>{
 app.use('/api/users', usersRoutes)
 app.use('/api/posts', postsRoutes)
 
-
+app.use('*', (req, res)=>{
+    res.sendFile(`${__dirname}/client/build/index.html`)
+})
 app.listen(PORT, (err)=>{
   console.log(err || `Server running on port ${PORT}`)
 })
