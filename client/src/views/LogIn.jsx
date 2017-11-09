@@ -27,7 +27,7 @@ class LogIn extends React.Component {
 			if(user) {
 				//give them a token and send them home
 				this.props.onLoginSuccess(user)
-				this.props.history.push(`/`)
+				this.props.history.push(`/posts/find`)
 			}
 		})
 	}

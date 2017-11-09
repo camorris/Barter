@@ -4,7 +4,7 @@ import axios from 'axios'
 
 class NewPost extends React.Component{
 	state = {
-		fields: { title: '', body: '', item: '', exchangeFor:'', location:'',image:'', cashValue:''},
+		fields: { title: '', body: '', item: '', exchangeFor:'', location:'LosAngeles',image:'', cashValue:''},
 		user: undefined
 	};
 
@@ -55,10 +55,34 @@ class NewPost extends React.Component{
 					<input className="form-control" type="text" placeholder="item wanted" name="exchangeFor" value={exchangeFor} />
 					</div>
 					<div className="form-group">
-					  <input className="form-control" type="text" placeholder="location" name="location" value={location} />
+					<label htmlFor="location">Location:  </label>
+						<select name="location">
+                            <option value="LosAngeles">Los Angeles</option>
+                            <option value="SantaMonica">Santa Monica</option>
+                            <option value="Mordor">Mordor</option>
+                            <option value="NeverNeverLand">Never Never Land</option>
+                            <option value="Hogwarts">Hogwarts</option>
+                            <option value="testLoc">testLoc</option>
+                        </select>
 					</div>
 					<div className="form-group">
-					  <input className="form-control" type="text" placeholder="image" name="image" value={image} />
+					  {/* <input className="form-control" type="text" placeholder="image" name="image" value={image} /> */}
+					  <label htmlFor="image">Category:  </label>
+					  <select name="image">
+                            <option value="Art">Art</option>
+                            <option value="Auto">Auto / Auto Parts</option>
+                            <option value="Toys">Kids Toys</option>
+                            <option value="Bikes">Bikes</option>
+                            <option value="Boats">Boat</option>
+                            <option value="Books">Books</option>
+							<option value="Computer">Computer</option>
+							<option value="Electronics">Electronics</option>
+							<option value="Furniture">Furniture</option>
+							<option value="Games">Games</option>
+							<option value="Photography">Photography</option>
+							<option value="Music">Music / Instruments</option>
+                        </select>
+					  
 					</div>
 					<div className="form-group">
 					  <input className="form-control" type="text" placeholder="cashValue" name="cashValue" value={cashValue} />
