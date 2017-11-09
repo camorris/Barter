@@ -21,7 +21,7 @@ class NavBar extends React.Component {
 		const { currentUser } = this.props
 		return (
 	
-			<nav class="navbar navbar-expand-lg navbar-light bg-dark navbar-toggleable-mr  bg-faded">
+			<nav class=" fixed-top navbar navbar-expand-lg navbar-light bg-dark navbar-toggleable-mr  bg-faded">
 			<div className='NavBar'>
 				<button onClick={ this.toggleMenu.bind(this)} className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<span className="navbar-toggler-icon"></span>
@@ -49,7 +49,7 @@ class NavBar extends React.Component {
 									<a onClick={ this.toggleMenu.bind(this)} className="nav-item nav-link dropdown-toggle" >Hello {currentUser.name}!</a>
 									<div className={`dropdown-menu nav-item dropdown nav-link active ${this.state.menuOpen ? 'show' : '' }`} aria-labelledby="navbarDropdownMenuLink">
 									<Link className="dropdown-item"to={`/profile/${this.props.currentUser._id}/edit`}>
-                        <button >Edit Profile</button>
+                        <a >Edit Profile</a>
                     </Link>
 										</div>
 							</li>

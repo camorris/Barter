@@ -50,8 +50,8 @@ class UserProfile extends React.Component{
                                                               <li key={post._id}>
                                                                 <p> <Link className="card-title"to="/">{post.title}</Link> </p>
                                                                 <a role="button" class="btn btn-default btn-xs pull-right"
-                                                                    href="#"><i class="glyphicon glyphicon-edit"></i></a>  <a role="button" class="btn btn-info btn-xs" href="#">Button</a> 
-                                                                <a role="button" class="btn btn-default btn-xs" href="#">Button</a>
+                                                                    href="#"><i class="glyphicon glyphicon-edit"></i></a>  <a role="button" class="btn btn-submit btn-xs" href="#">edit</a> 
+                                                                <a role="button" class="btn btn-default btn-xs" href="#">X</a>
                                                              </li>
                                                           </div>
                                                         </div>

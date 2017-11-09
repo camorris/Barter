@@ -18,14 +18,14 @@ h1 {
    
  }
  
-// #middle{
-//   text-align: left;
-//   position: center;
-//   margin: 0 auto;
-//   margin-top: 30px;
-//   position: horizontal;
+#middle{
+  text-align: left;
+  position: center;
+  margin: 0 auto;
+  margin-top: 30px;
+  position: horizontal;
   
-// }
+}
  .btn.btn-submit{
    background-color: #e62aff;
    color: white;
@@ -101,6 +101,7 @@ margin-top: 30px;
   margin-top: 10px;
   margin: auto 0;
   background-color: rgb(255, 255, 255) !important;
+  position: absolute;
 }
 
 .navbar-toggler{
@@ -112,8 +113,8 @@ margin-top: 30px;
   display:block !important;
   margin: auto !important;
 }
-.row:hover{
-  transform: rotate3d(20,0,20,20deg)
+.card:hover{
+  box-shadow: 10px 8px 20px -6px rgba(51, 51, 51, 0.842) !important 
 }
 
 

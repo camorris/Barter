@@ -40,7 +40,7 @@ class NewPost extends React.Component{
 		return (
 			<div  className='NewPost col-sm-6 col-sm-offset-6' id="middle">
 		
-				<h1>Welcome to the New Post page!</h1>
+				<h1>What Items or Service would you like to trade?</h1>
 
 				<form onChange={this.onInputChange.bind(this)} onSubmit={this.onFormSubmit.bind(this)}>
 				<div className="form-group">
@@ -62,7 +62,7 @@ class NewPost extends React.Component{
           <div className="form-group">
             			<textarea className="form-control" rows='5' cols='25' placeholder="body" name="body" value={body} />
 					</div>
-					<button className="btn btn-submit">BartR!</button>
+					<button className="btn btn-submit">Barter!</button>
 				</form>
 
 			</div>
