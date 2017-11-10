@@ -9,7 +9,7 @@ const
   PORT = process.env.PORT || 3001,
   usersRoutes = require('./routes/users.js')
   postsRoutes = require('./routes/posts.js')
-
+//
 mongoose.connect(MONGODB_URI, (err)=>{
   console.log(err|| `Connected to MongoDB.`)
 })
@@ -26,7 +26,7 @@ app.use('/api/users', usersRoutes)
 app.use('/api/posts', postsRoutes)
 
 app.use('*', (req, res)=>{
-    res.sendFile(`${__dirname}/client/build/index.html`)
+  res.sendFile(`${__dirname}/client/build/index.html`)
 })
 app.listen(PORT, (err)=>{
   console.log(err || `Server running on port ${PORT}`)
