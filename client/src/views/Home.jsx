@@ -45,19 +45,14 @@ class Home extends React.Component  {
 			
   			<h3 className="display-3">Welcome, This is Barter!</h3>
 	
-  			<p className="lead"> Getting the things you want has never been easier. Here at Barter we beleive the in reducing the need to exchange money for goods and services.</p>
+  			<p className="lead"> Getting the things you want has never been easier. Here at Barter we beleive in reducing the need to exchange money for goods and services, and strengthening the ties of the community.</p>
   			<hr className="my-4"/>
   			<p className="lead"> Sign up for premimum to receive ad free content</p>
 		</div>
-			<h2 className='imageText'>Things People are Currently Trading</h2>
-			<div className="mainImage">
-					<img className="homeImage" src={this.state.currentPhoto} alt="picture"/>
-			</div>
-	
 		<div className="row text-center">
       <div className="col-md-4">
         <span className="fa-stack fa-4x">
-          <i className="fa fa-square fa-spin fa-stack-2x"></i>
+          <i className="fa fa-square fa-stack-2x"></i>
           <i className="fa fa-list fa-stack-1x fa-inverse" ></i>
         </span>
         <h4 className="service-heading">List Items and Services</h4>
@@ -73,7 +68,7 @@ class Home extends React.Component  {
       </div>
       <div className="col-md-4">
         <span className="fa-stack fa-4x">
-          <i className="fa fa-square fa-spin fa-stack-2x"></i>
+          <i className="fa fa-square fa-stack-2x"></i>
           <i className="fa fa-heart  fa-stack-1x fa-inverse"></i>
         </span>
         <h4 className="service-heading">Save Money</h4>
@@ -82,6 +77,12 @@ class Home extends React.Component  {
     </div>
 
 
+			<h2 className='imageText'>Things People are Currently Trading</h2>
+			<div className="mainImage">
+					<img className="homeImage" src={this.state.currentPhoto} alt="picture"/>
+			</div>
+	
+		
 		</div>
 
 	)

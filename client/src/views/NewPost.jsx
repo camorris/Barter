@@ -55,13 +55,13 @@ class NewPost extends React.Component{
 
 				<form onChange={this.onInputChange.bind(this)} onSubmit={this.onFormSubmit.bind(this)}>
 				<div className="form-group">
-					<input className="form-control" type="text" placeholder="title" name="title" value={title} />
+					<input className="form-control" type="text" placeholder="Title*" name="title" value={title} />
 					</div>
 					<div className="form-group">
-					<input className="form-control" type="text" placeholder="item" name="item" value={item} />
+					<input className="form-control" type="text" placeholder="Item*" name="item" value={item} />
 					</div>
 					<div className="form-group">
-					<input className="form-control" type="text" placeholder="item wanted" name="exchangeFor" value={exchangeFor} />
+					<input className="form-control" type="text" placeholder="Item Wanted*" name="exchangeFor" value={exchangeFor} />
 					</div>
 					<div className="form-group">
 					<label htmlFor="location">Location:  </label>
@@ -92,10 +92,10 @@ class NewPost extends React.Component{
 					  
 					</div>
 					<div className="form-group">
-					  <input className="form-control" type="number" placeholder="cashValue" name="cashValue" value={cashValue} />
+					  <input className="form-control" type="number" placeholder="Optional Cash Value" name="cashValue" value={cashValue} />
 					</div>
           <div className="form-group">
-            			<textarea className="form-control" rows='5' cols='25' placeholder="body" name="body" value={body} />
+            			<textarea className="form-control" rows='5' cols='25' placeholder="body *" name="body" value={body} />
 					</div>
 					<button className="btn btn-submit">Barter!</button>
 				</form>

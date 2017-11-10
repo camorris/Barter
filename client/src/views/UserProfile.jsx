@@ -94,12 +94,12 @@ class UserProfile extends React.Component{
                                     return(
 
                                                  <div className=" col-xs-12 col-sm-6 col-md-3 card" >
-                                                     <div class="caption">
-                                                        
                                                              <div className="card-body">
                                                               <li key={post._id}>
                                                                 <p> <Link className="card-title" to={`/posts/${post.location}/${post._id}`}>{post.title}</Link> </p>
                                                                 <div><img src={image} alt="Category"/></div>
+                                                                <p>You're Trading: {post.item}</p>
+                                                                <p>You Want: {post.exchangeFor}</p>
                                                                 <Link to={`/posts/${post.location}/${post._id}/edit`}>
                                                                     <a role="button" className="btn btn-default btn-xs pull-right"
                                                                     href="#"><i className="glyphicon glyphicon-edit"></i>
@@ -108,7 +108,7 @@ class UserProfile extends React.Component{
                                                              </li>
                                                           </div>
                                                         </div>
-                                                    </div>
+                                                   
                                                 
 
                                     )

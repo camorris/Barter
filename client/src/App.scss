@@ -19,7 +19,10 @@ h1 {
  z-index: 1;
  margin-bottom: 20px;
 }
- 
+ .viewPost{
+   font-size: 20px
+ }
+   
   img {
     position: relative;
     left: 0;
@@ -160,9 +163,12 @@ margin-top: 30px;
   
 }
 
-.fa{
-  margin-top: 10px;
+.fa,  {
+  margin-top: 60px;
   margin-bottom: 20px;
+}
+.service-heading{
+  margin-top: 50px;
 }
 
 .jumbotron, .jumbotron-fluid{
@@ -177,7 +183,9 @@ margin-top: 30px;
  
 
 }
-
+.homeImage{
+  height:450px;
+}
 
 .container, .display-3, .lead, .my-4{
   border: magenta;

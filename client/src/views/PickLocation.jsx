@@ -114,13 +114,15 @@ class FindLocale extends React.Component{
                                         
                                 }
                                 return(
-                                    <div key={post._id}>
+                                    <div className=" col-xs-12 col-sm-6 col-md-3 card" key={post._id} >
+                                            <div className="card-body">
                                         <h3><Link to={`/posts/${post.location}/${post._id}`}>{post.title}</Link></h3>
                                         <div><img src={image} alt="Category"/></div>
                                         <p>User Offering: {post.item}</p>
                                         <p>User Wants: {post.exchangeFor}</p>
                                     </div>
-                                    
+                                    </div>
+                                 
                                 )
                             })}
                     </div>

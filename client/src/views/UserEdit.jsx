@@ -85,7 +85,7 @@ class UserEdit extends React.Component{
             //^^^^ This is just data storage for easy testing. Playing with password auths
             console.log(name)
             return(
-                <div>
+                <div className='LogIn col-sm-6 col-sm-offset-6' id="middle">
                     <h1>{this.state.user.name}</h1>
                     <form onChange={this.onInputChange.bind(this)} onSubmit={this.onFormSubmit.bind(this)}>
                         <div className="form-group">
@@ -105,7 +105,7 @@ class UserEdit extends React.Component{
                         </div>
                         <button className="btn btn-submit">Edit Profile</button>
                     </form>
-                    <button onClick={this.onDeleteClick.bind(this)}>DELETE</button>
+                    <button className="btn btn-submit" onClick={this.onDeleteClick.bind(this)}>DELETE</button>
                 </div>
             )
         }

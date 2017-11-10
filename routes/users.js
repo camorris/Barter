@@ -21,10 +21,9 @@ const
 
   usersRouter.post('/authenticate', usersCtrl.authenticate)
 
-  usersRouter.use(verifyToken)
   usersRouter.route('/:id')
     .get(usersCtrl.show)
-    .patch(matchUser, usersCtrl.update)
-    .delete(matchUser, usersCtrl.destroy)
+    .patch(verifyToken, matchUser, usersCtrl.update)
+    .delete(verifyToken, matchUser, usersCtrl.destroy)
 
   module.exports = usersRouter

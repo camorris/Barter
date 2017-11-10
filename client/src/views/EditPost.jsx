@@ -70,13 +70,13 @@ class EditPost extends React.Component{
                 <h1>Edit the Post!</h1>
                 <form onChange={this.onInputChange.bind(this)} onSubmit={this.onFormSubmit.bind(this)}>
                     <div className="form-group">
-                        <input className="form-control" type="text" placeholder="title" name="title" defaultValue={title} />
+                        <input className="form-control" type="text" placeholder="Title*" name="title" defaultValue={title} />
                     </div>
                     <div className="form-group">
-                        <input className="form-control" type="text" placeholder="item" name="item" defaultValue={item} />
+                        <input className="form-control" type="text" placeholder="Item*" name="item" defaultValue={item} />
                     </div>
                     <div className="form-group">
-                        <input className="form-control" type="text" placeholder="Exchange For" name="exchangeFor" defaultValue={exchangeFor} />
+                        <input className="form-control" type="text" placeholder="Exchange For*" name="exchangeFor" defaultValue={exchangeFor} />
                     </div>
                     <div className="form-group">
 
@@ -112,9 +112,9 @@ class EditPost extends React.Component{
                     <div className="form-group">
                         <textarea className="form-control"rows='5' cols='25' placeholder="body" name="body" defaultValue={body} />
                     </div>
-                    <button className="btn btn-submit">Barter!</button>
+                    <button className="btn btn-submit btn-sm">Barter!</button>
                 </form>
-                <button className="btn btn-submit btn-lg" onClick={this.onDeleteClick.bind(this)}>DELETE</button>
+                <button className="btn btn-submit btn-sm" onClick={this.onDeleteClick.bind(this)}>DELETE</button>
 
                 </div>
             )

@@ -31,8 +31,7 @@ Javascript: Create the functionality between the users(property owner/resident) 
 
 Jquery: to traverse the DOM 
 
-
-Ajax: Used ajax to create chate between residents adn property owner
+React: Javascript Library
 
 Node.js: allows us to runs javascript not in the browser. Implemented Node Module Packages: 
 
@@ -42,7 +41,7 @@ MongoDb: A database to store information about the Property Owner, Resident and 
 
 ### Unsolved Problems 
 ---
-  With the alotted time we were unable to add several features to the app. For example s
+  Currently 
 
 ### How to Use
 ---

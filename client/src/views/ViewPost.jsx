@@ -34,6 +34,7 @@ state={
             //we also need to send a request to get the user referenced in the post...
             axios({method: 'get', url:`/api/users/${post.data.userId}`})
             .then((user)=>{
+                console.log(user)
                 //and put that in the state as well
                 this.setState({user: user.data})
             })
@@ -83,14 +84,17 @@ state={
                     
             }
             return(
-                <div>
+                <div className="col-sm-6 col-sm-offset-6" id="middle">
+                
                     <Link to={`/posts/${post.location}/${post._id}/edit`}><button>Edit Post</button></Link>
                     <h1>{post.title}</h1>
-                    <div>
-                        <div><img src={image} alt="Category"/></div>
+                    <div  id="middle">
+                        <div ><img src={image} alt="Category"/></div>
                     </div>
-                    <div>
-                        <div>{user.name} wants to exchange: {post.item}</div> <div>{user.name} wants to recieve: {post.exchangeFor}</div>
+                    <div id="middle">
+                        <div className="viewPost" id="middle" >{user.name} Wants to exchange: {post.item}</div>
+                         <div className="viewPost" id="middle">{user.name} Wants to recieve: {post.exchangeFor}</div>
+                         <div className="viewPost" id="middle"> Feel Free to Contact at:<a href={`mailto:${user.email}?Subject=Hello%20again`}> {user.email} </a></div>
                     </div>
                     <hr/>
 
@@ -98,6 +102,7 @@ state={
                         <p>{post.body}</p>
                     </div>
                 </div>
+                
             )
         }
         else{

@@ -16,6 +16,9 @@ h2 {
   z-index: 1;
   margin-bottom: 20px; }
 
+.viewPost {
+  font-size: 20px; }
+
 img {
   position: relative;
   left: 0;
@@ -129,8 +132,11 @@ body {
   z-index: 0; }
 
 .fa {
-  margin-top: 10px;
+  margin-top: 60px;
   margin-bottom: 20px; }
+
+.service-heading {
+  margin-top: 50px; }
 
 .jumbotron, .jumbotron-fluid {
   margin: 0 auto;
@@ -140,6 +146,9 @@ body {
   padding: .5%;
   width: 75%;
   text-align: center; }
+
+.homeImage {
+  height: 450px; }
 
 .container, .display-3, .lead, .my-4 {
   border: magenta;
