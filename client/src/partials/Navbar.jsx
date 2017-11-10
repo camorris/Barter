@@ -49,8 +49,7 @@ class NavBar extends React.Component {
 							<Link className="nav-item nav-link" to={`/posts/find`}>Find Stuff!</Link>
 							</li>
 							<li className= "nav-item dropdown nav-link active">
-									<a onClick={ this.toggleMenu.bind(this)} className="nav-item nav-link dropdown-toggle" >Hello {currentUser.name}!</a>
-									<div className={`dropdown-menu nav-item dropdown nav-link active ${this.state.menuOpen ? 'show' : '' }`} aria-labelledby="navbarDropdownMenuLink">
+ 									<div className={`dropdown-menu nav-item dropdown nav-link active ${this.state.menuOpen ? 'show' : '' }`} aria-labelledby="navbarDropdownMenuLink">
 									<Link className="dropdown-item"to={`/profile/${currentUser._id}/edit`}>
                         <a >Edit Profile</a>
                     </Link>

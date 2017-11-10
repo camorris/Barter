@@ -2,23 +2,26 @@
 .input{
    max-width: 30%;
  }
- 
+// adjusts h1 attributes
 h1 {
   font-size: 40px !important;
   margin-top: 125px !important;
   margin-bottom: 20px !important;
   text-align: center;
 }
- h2{
+// adjusts h2 attributes
+h2{
   font-size: 40px !important;
   margin-top: 125px !important;
   text-align: center;
  }
+// adjust the text of the home page image
 .imageText{
- z-index: 1;
- margin-bottom: 20px;
+  z-index: 1;
+  margin-bottom: 20px;
 }
- .viewPost{
+//
+.viewPost{
    font-size: 20px
  }
    
@@ -29,7 +32,6 @@ h1 {
     margin: auto; 
     height:50px !important;
   
-   
  }
  
 #middle{
@@ -146,20 +148,16 @@ margin-top: 30px;
   margin: auto !important;
 }
 .card:hover{
-  box-shadow: 10px 8px 20px -6px rgba(51, 51, 51, 0.842) !important 
+  box-shadow: 10px 8px 20px -6px rgba(51, 51, 51, 0.842) !important;
 }
-
 
 .homeImage {
   margin-top: 25px;
   margin-bottom: 20px;
-  // width:2000px !important;
   width:100%!important;
   height: auto!important;
-  // height:400px !important;
   position:relative;
   z-index: 0
-  
 }
 
 .fa,  {
@@ -171,17 +169,15 @@ margin-top: 30px;
 }
 
 .jumbotron, .jumbotron-fluid{
- 
- margin: 0 auto;
- margin-top:150px ;
- box-shadow: 0px 8px 6px -6px rgb(156, 156, 156) !important ;
- border: 1px solid magenta;
- padding: .5%;
- width: 75%;
- text-align: center;
- 
-
+  margin: 0 auto;
+  margin-top:150px ;
+  box-shadow: 0px 8px 6px -6px rgb(156, 156, 156) !important ;
+  border: 1px solid magenta;
+  padding: .5%;
+  width: 75%;
+  text-align: center;
 }
+
 .homeImage{
   height:450px;
 }

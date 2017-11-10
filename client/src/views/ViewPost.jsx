@@ -46,6 +46,7 @@ state={
         if (this.state.post && this.state.user){
             //store that information in an easy to read way, and display content
             //line52-85 is a switch statement to display different iamge icons
+            //line99 allows you instatntly send email to client
             const post = this.state.post
             const user = this.state.user
             var image = post.image
