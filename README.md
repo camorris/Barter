@@ -13,6 +13,7 @@
 ------
   
  Allow people to trade items and/or services without the need to exchange money. 
+ https://letsbarter.herokuapp.com
 
 ***important information can go here.*** 
 
@@ -41,13 +42,27 @@ MongoDb: A database to store information about the Property Owner, Resident and 
 
 ### Unsolved Problems 
 ---
-  Currently 
+  Currently we are working on implementing a chat for our users.
 
 ### How to Use
 ---
 
+  Make an account and post things you want to trade.
+  
+### How to use Locally
+---
+
+1. clone repository
+2. make sure you have node.js, node, mongod, mongoDb, and react
+3. npm install from root folder and client folder
+4. npm start from client
+  
 
 ### References
 ---
+
+www.googlefont.com
+www.bootstrap.com
+Phillippe and Jimmy
  
 	
