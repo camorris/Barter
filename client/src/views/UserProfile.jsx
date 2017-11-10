@@ -14,125 +14,113 @@ import Photography from "../icons/Photography.png"
 import Toys from "../icons/Toys.png"
 
 class UserProfile extends React.Component{
-    state = {
-        user: {
-        }
-    }
-    //when the component mounts
-    componentDidMount(){
-        //store the user ID from the url params
-            const userID = this.props.currentUser._id
-            //use it to get the user object
-            axios({method: 'get', url:`/api/users/${userID}`})
-            .then((thisUser)=>{
-                //and set it into the state
-                this.setState({
-                    user: thisUser.data
-                })
-                // then fetch the posts
-                this.fetchPosts()
-            })
-    }
-    fetchPosts(){
-        //get the posts using the user ID to sort
-            axios({method:'get', url:`/api/posts/user/${this.state.user._id}`})
-            .then((posts)=>{        
-                this.setState({
-                    //and set them in the state
-                    posts: posts.data
-                })
-            })
-
-    }
-    render(){
-        const posts = this.state.posts
-        //if there are posts, dynamically display the content
-        //line97-109 displayes the items being traded in a bootstrap card format
-        if (posts){
-            return(
-                <div className='UserProfile'>
-                      
-                        <h1>What you are Trading</h1>
-                            <ul className="cardstack" id="tradeItem">
-                            <div className="container">
-                                {posts.map((post)=>{
-                                                let image = post.image
-                                                switch(post.image){
-                                                    case 'Art':
-                                                        image=Art
-                                                        break;
-                                                    case 'Auto':
-                                                        image=Auto
-                                                        break;
-                                                    case 'Bike':
-                                                        image=Bike
-                                                        break;
-                                                    case 'Books':
-                                                        image=Books
-                                                        break;
-                                                    case 'Electronics':
-                                                        image=Electronics
-                                                        break;
-                                                    case 'Furniture':
-                                                        image=Furniture
-                                                        break;
-                                                    case 'Games':
-                                                        image=Games
-                                                        break;
-                                                    case 'Guitar':
-                                                        image=Guitar
-                                                        break;
-                                                    case 'Photography':
-                                                        image=Photography
-                                                        break;
-                                                    case 'Toys':
-                                                        image=Toys
-                                                        break;
-                                                    default:
-                                                        image = post.img
-                                                        
-                                                }
-                                    return(
-
-                                                 <div className=" col-xs-12 col-sm-6 col-md-3 card" >
-                                                             <div className="card-body">
-                                                              <li key={post._id}>
-                                                                <p> <Link className="card-title" to={`/posts/${post.location}/${post._id}`}>{post.title}</Link> </p>
-                                                                <div><img src={image} alt="Category"/></div>
-                                                                <p>You're Trading: {post.item}</p>
-                                                                <p>You Want: {post.exchangeFor}</p>
-                                                                <Link to={`/posts/${post.location}/${post._id}/edit`}>
-                                                                    <a role="button" className="btn btn-default btn-xs pull-right"
-                                                                    href="#"><i className="glyphicon glyphicon-edit"></i>
-                                                                    </a><a role="button" className="btn btn-submit btn-xs" id="editTrade" href="#">edit</a> </Link>
-                                                               
-                                                             </li>
-                                                          </div>
-                                                        </div>
-                                                   
-                                                
-
-                                    )
-                                })}
-                            </div>
-
-                            </ul>
-                    
-                   
-                </div>
-            )
-        }
-        //otherwise tell them we are loading the posts
-        else{
-            return(
-                <div className='UserProfile'>
-                    <h1>Loading Posts...</h1>
-                </div>
-            )
-        }
-    }
+	state = {
+		user: {}
+	}
+	//when the component mounts
+	componentDidMount(){
+		//store the user ID from the url params
+		const userID = this.props.currentUser._id
+		//use it to get the user object
+		axios({method: 'get', url:`/api/users/${userID}`})
+		.then((thisUser)=>{
+			//and set it into the state
+			this.setState({
+				user: thisUser.data
+			})
+			// then fetch the posts
+			this.fetchPosts()
+		})
+	}
+	fetchPosts(){
+		//get the posts using the user ID to sort
+		axios({method:'get', url:`/api/posts/user/${this.state.user._id}`})
+		.then((posts)=>{        
+			this.setState({
+				//and set them in the state
+				posts: posts.data
+			})
+		})
+	}
+	render(){
+		const posts = this.state.posts
+		//if there are posts, dynamically display the content
+		//line97-109 displayes the items being traded in a bootstrap card format
+		if (posts){
+			return(
+				<div className='UserProfile'>
+					<h1>What you are Trading</h1>
+					<ul className="cardstack" id="tradeItem">
+						<div className="container">
+							{posts.map((post)=>{
+								let image = post.image
+								switch(post.image){
+									case 'Art':
+										image=Art
+										break;
+									case 'Auto':
+										image=Auto
+										break;
+									case 'Bike':
+										image=Bike
+										break;
+									case 'Books':
+										image=Books
+										break;
+									case 'Electronics':
+										image=Electronics
+										break;
+									case 'Furniture':
+										image=Furniture
+										break;
+									case 'Games':
+										image=Games
+										break;
+									case 'Guitar':
+										image=Guitar
+										break;
+									case 'Photography':
+										image=Photography
+										break;
+									case 'Toys':
+										image=Toys
+										break;
+									default:
+										image = post.img											
+								}
+								return(
+									<div className=" col-xs-12 col-sm-6 col-md-3 card" >
+										<div className="card-body">
+											<li key={post._id}>
+												<p> <Link className="card-title" to={`/posts/${post.location}/${post._id}`}>{post.title}</Link> </p>
+												<div><img src={image} alt="Category"/></div>
+												<p>You're Trading: {post.item}</p>
+												<p>You Want: {post.exchangeFor}</p>
+												<Link to={`/posts/${post.location}/${post._id}/edit`}>
+													<a role="button" className="btn btn-default btn-xs pull-right"
+														href="#"><i className="glyphicon glyphicon-edit"></i>
+													</a>
+													<a role="button" className="btn btn-submit btn-xs" id="editTrade" href="#">edit</a> 
+												</Link>																	
+											</li>
+										</div>
+									</div>
+								)
+							})}
+						</div>
+					</ul>		
+				</div>
+			)
+		}
+		//otherwise tell them we are loading the posts
+		else{
+			return(
+				<div className='UserProfile'>
+					<h1>Loading Posts...</h1>
+				</div>
+			)	
+		}
+	}
 }
-
-
 export default UserProfile
 

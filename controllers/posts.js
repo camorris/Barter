@@ -2,7 +2,7 @@ const
   Posts = require('../models/Post.js')
   jwt = require('jsonwebtoken')
   dotenv = require('dotenv').load()
-
+//
 
 module.exports = {
   index: (req,res)=> {
@@ -13,7 +13,6 @@ module.exports = {
   },
 
   subindex: (req, res)=>{
-    console.log(req)
     Posts.find({"userId": req.params.id}, (err, posts)=>{
       res.json(posts)
     })
@@ -31,15 +30,9 @@ module.exports = {
       newPost.save((err, post)=>{
         res.json({success: true, message: "Post Created", post })
     })
-
-    // Posts.create(req.body, (err, post) => { 
-    //   if (err) return res.json({success: false, message: "Missing Required Fields"})
-    //   res.json({success: true, message: "Post Created", post })
-    // })
   },
 
   update: (req, res)=>{
-    console.log(req.user)
     Posts.findById(req.params.id, (err, post)=>{
       if (post.userId == jwt.decode(req.headers.token)._id)
       {
@@ -47,15 +40,14 @@ module.exports = {
         post.save((err, updatedPost) =>{
           res.json({success: true, message: "Post updated!", updatedPost})
         })
-      } else {
-        
+      } 
+      else {       
         res.json({success: false, message:`header id: ${jwt.decode(req.headers.token)._id}, owner id: ${post.userId}`})
       }
     })
   },
 
   destroy: (req, res)=>{
-    // res.json({success: true, message: "You are in the delete request"})
     Posts.findById(req.params.id, (err, post)=>{
       if (post.userId == jwt.decode(req.headers.token)._id)
       {
