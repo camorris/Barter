@@ -29,7 +29,7 @@ class LogIn extends React.Component {
 			}
 		})
 	}
-	
+	// shows the bootstrapified log in form. note the classes
 	render() {
 		const { email, password } = this.state.fields
 		return (

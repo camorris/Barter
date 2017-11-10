@@ -31,7 +31,8 @@ class SignUp extends React.Component {
 			}
 		})
 	}
-	
+	// shows the page for users to sign up to this ground breaking application
+
 	render() {
 		const { name, email, password } = this.state.fields
 		return (

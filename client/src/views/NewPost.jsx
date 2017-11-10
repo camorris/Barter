@@ -44,7 +44,9 @@ class NewPost extends React.Component{
 		})
 
 	}
-	//display the form
+	//display the form to create a new item to trade
+	//line70-75 list the places you can find items
+	//line80-92 list the categories you can place items
 	render(){
 	
 		const {title, body, item, exchangeFor, cashValue} = this.state.fields
@@ -75,7 +77,6 @@ class NewPost extends React.Component{
                         </select>
 					</div>
 					<div className="form-group">
-					  {/* <input className="form-control" type="text" placeholder="image" name="image" value={image} /> */}
 					  <label htmlFor="image">Category:  </label>
 					  <select name="image">
                             <option value="Art">Art</option>

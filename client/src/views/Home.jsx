@@ -20,10 +20,9 @@ class Home extends React.Component  {
 			this.changeIndex()
 		}, 5000)
 	}
-
+// chagne the index so we can changing photos. no bootstrap carousel
 	changeIndex() {
 		if(i < this.state.slides.length -1) {
-	//placed ++ changing it prior to 
 			++i
 		} else {
 			i = 0
@@ -34,10 +33,15 @@ class Home extends React.Component  {
 	getImage(i) {
 		this.setState({currentPhoto: this.state.slides[i]})
 	}
-
+// clears the interval once the page is closed
 	componentWillUnmount() {
 		clearInterval(this.interval)
 	}
+
+// render the home page which is all the content beneath the navbar
+//line46-47 creates the bootstrap jumbotron
+//line 55-80 creates the font-awesome icons 
+//line84-87 creates the image slideshow
 	render(){
 	return (
 		<div className='Home'>

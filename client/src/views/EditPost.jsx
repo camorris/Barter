@@ -62,6 +62,8 @@ class EditPost extends React.Component{
             )
         }
         //otherwise dynamically display the form, using the information we got earlier!
+        // line84 makes use of drop down display to show different locations
+        //line97-108 makes use of drop down display to show different categories
         else{
             const {title, body, item, exchangeFor, location, image, cashValue} = this.state.fields
             return(

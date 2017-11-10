@@ -83,7 +83,7 @@ class UserEdit extends React.Component{
             const {name, email, password, confirmNewPassword, passwordConfirm} = this.state.fields
             //, password, confirmPassword, currentPassword
             //^^^^ This is just data storage for easy testing. Playing with password auths
-            console.log(name)
+            //lines88-109 allows users to input and edit their information and updated their password
             return(
                 <div className='LogIn col-sm-6 col-sm-offset-6' id="middle">
                     <h1>{this.state.user.name}</h1>

@@ -45,6 +45,7 @@ state={
         //if we have a state and a user
         if (this.state.post && this.state.user){
             //store that information in an easy to read way, and display content
+            //line52-85 is a switch statement to display different iamge icons
             const post = this.state.post
             const user = this.state.user
             var image = post.image

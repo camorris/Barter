@@ -7,7 +7,7 @@ class LogOut extends React.Component {
 	componentDidMount() {
 		this.props.onLogOut()
 	}
-	
+// redirects client to login page when log out link is clicked
 	render() {
 		return <Redirect to="/login" />
 	}

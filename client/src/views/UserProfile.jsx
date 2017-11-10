@@ -47,6 +47,7 @@ class UserProfile extends React.Component{
     render(){
         const posts = this.state.posts
         //if there are posts, dynamically display the content
+        //line97-109 displayes the items being traded in a bootstrap card format
         if (posts){
             return(
                 <div className='UserProfile'>
@@ -135,6 +136,3 @@ class UserProfile extends React.Component{
 
 export default UserProfile
 
-{/* <Link to={`/profile/${this.props.currentUser._id}/edit`}>
-<button className="edit-link btn btn-submit">Edit Profile</button>
-</Link> */}

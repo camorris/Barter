@@ -74,7 +74,6 @@ class FindLocale extends React.Component{
                         <button className="btn btn-submit">Find Stuff!</button>
                     </form>
                     <hr/>
-
                     <div className='postList'>
                             {this.state.posts.map((post)=>{
                                 let image = post.image
