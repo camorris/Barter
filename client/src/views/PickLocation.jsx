@@ -42,7 +42,7 @@ class FindLocale extends React.Component{
         if(this.state.posts.length < 1){
             return(
                 <div className="col-sm-6 col-sm-offset-6" id="middle">
-                    <h1 className="col-sm-6 col-sm-offset-6" id="middle">Find Some Posts!</h1>
+                    <h1 className="col-sm-6 col-sm-offset-6" id="middle">Find Some Items to Trade!</h1>
                     <form onSubmit={this.onFormSubmit.bind(this)} onChange={this.onFormChange.bind(this)}>
                         <select name="location">
                             <option value="LosAngeles">Los Angeles</option>
@@ -61,7 +61,7 @@ class FindLocale extends React.Component{
         else{
             return(
                 <div className="col-sm-6 col-sm-offset-6" id="middle">
-                    <h1>Find Some Posts!</h1>
+                    <h1>Find Some Items to Trade!</h1>
                     <form onSubmit={this.onFormSubmit.bind(this)} onChange={this.onFormChange.bind(this)}>
                         <select name="location">
                             <option value="LosAngeles">Los Angeles</option>
