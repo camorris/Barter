@@ -45,10 +45,9 @@ class Home extends React.Component  {
 			
   			<h3 className="display-3">Welcome, This is Barter!</h3>
 	
-  			<p className="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+  			<p className="lead"> Getting the things you want has never been easier. Here at Barter we beleive the in reducing the need to exchange money for goods and services.</p>
   			<hr className="my-4"/>
-  			<p className="lead" >It uses utility classNamees for typography and spacing to space content out within the larger container.</p>
-	
+  			<p className="lead"> Sign up for premimum to receive ad free content</p>
 		</div>
 			<h2 className='imageText'>Things People are Currently Trading</h2>
 			<div className="mainImage">
