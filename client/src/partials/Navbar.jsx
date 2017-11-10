@@ -27,15 +27,14 @@ class NavBar extends React.Component {
 						<span className="navbar-toggler-icon"></span>
 					</button>
 						<div  className={`collapse navbar-collapse  ${this.state.menuOpen ? 'show' : '' }`} id="navbarNavAltMarkup">
-					<div className="navbar-nav">
+							<div className="navbar-nav">
 				{currentUser
 					? (
 						<span>
-							
 							<ul className="navbar-nav">
-							<li className="nav-item  nav-link active">
-							<Link className="navbar-brand" to="/"><img src={BarterImage} alt="logo"/></Link>
-							</li>
+								<li className="nav-item  nav-link active">
+									<Link className="navbar-brand" to="/"><img src={BarterImage} alt="logo"/></Link>
+								</li>
 								<li className="nav-item  nav-link active">
 							{<Link className="nav-item nav-link" to="/post">New Post</Link>}
 							</li>

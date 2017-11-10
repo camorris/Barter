@@ -51,7 +51,7 @@ class Home extends React.Component  {
 	
   			<p className="lead"> Getting the things you want has never been easier. Here at Barter we beleive in reducing the need to exchange money for goods and services, and strengthening the ties of the community.</p>
   			<hr className="my-4"/>
-  			<p className="lead"> Sign up for premimum to receive ad free content</p>
+  			<p className="lead"> Sign up for premium to receive ad free content</p>
 		</div>
 		<div className="row text-center">
       <div className="col-md-4">
