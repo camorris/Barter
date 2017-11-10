@@ -43,6 +43,8 @@ MongoDb: A database to store information about the Property Owner, Resident and 
 ### Unsolved Problems 
 ---
   Currently we are working on implementing a chat for our users.
+  Displaying Cash Value.
+  Updating new token when user changes name and email
 
 ### How to Use
 ---

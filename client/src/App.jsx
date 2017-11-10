@@ -76,7 +76,7 @@ class App extends React.Component {
 
 					{/* Posts Indexer */}
 					<Route exact path="/posts/find" render={(props)	 => {
-						return <FindLocale {...props}/>				
+						return <FindLocale {...props} />				
 					}} />
 
 					{/* Post Edit */}

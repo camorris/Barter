@@ -17,7 +17,7 @@ class NavBar extends React.Component {
 	render() {
 //constant variable  passes in this.props to the curentUser
 		const { currentUser } = this.props
-		return (
+			return (
 // line23 navbar is styled with bootstrap classes and specific css
 //line28 uses ternary to place and remove the show class
 // Link tags are implemented so our react router dom can send the client to specified parts of the page
@@ -25,8 +25,8 @@ class NavBar extends React.Component {
 				<div className='NavBar'>
 					<button onClick={ this.toggleMenu.bind(this)} className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						<span className="navbar-toggler-icon"></span>
-				</button>
-				<div  className={`collapse navbar-collapse  ${this.state.menuOpen ? 'show' : '' }`} id="navbarNavAltMarkup">
+					</button>
+						<div  className={`collapse navbar-collapse  ${this.state.menuOpen ? 'show' : '' }`} id="navbarNavAltMarkup">
 					<div className="navbar-nav">
 				{currentUser
 					? (

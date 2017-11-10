@@ -118,7 +118,7 @@ class FindLocale extends React.Component{
                                         <h3><Link to={`/posts/${post.location}/${post._id}`}>{post.title}</Link></h3>
                                         <div><img src={image} alt="Category"/></div>
                                         <p>User Offering: {post.item}</p>
-                                        <p>User Wants: {post.exchangeFor}</p>
+                                        <p>User {post.exchangeFor}</p>
                                     </div>
                                     </div>
                                  
