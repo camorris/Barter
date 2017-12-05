@@ -42,12 +42,12 @@ class Home extends React.Component  {
 //line84-87 creates the image slideshow
 	render(){
 		return (
-			<div className='Home'>
+			<div className='Home '>
 				<div className="jumbotron jumbotron-fluid bg-white">			
   				<h3 className="display-3">Welcome, This is Barter!</h3>	
   				<p className="lead"> Getting the things you want has never been easier. Here at Barter we beleive in reducing the need to exchange money for goods and services, and strengthening the ties of the community.</p>
   				<hr className="my-4"/>
-  				<p className="lead"> Sign up for premimum to receive ad free content</p>
+  				<p className="lead"> Sign up for premium to receive ad free content</p>
 				</div>
 				<div className="row text-center">
       		<div className="col-md-4">
